@@ -1,6 +1,6 @@
+from __future__ import division
 import pymongo
 from datetime import datetime
-from __future__ import division
 
 class Game:
 	def __init__(self,area='State',name=None,points=0,tweets=None,lastTweetVal=None,lastIncrease=None,lastUpdate=None,totalTweets=None,motherState=None):
@@ -69,27 +69,27 @@ class Game:
 		LastTweetCount = self.lastTweetVal
 		NewTweetCount = self.tweets
 		Update = 0
-		if (TimeDelta.days > 7 && self.tweets == 0 && self.totalTweets != 0):
+		if (TimeDelta.days > 7 and self.tweets == 0 and self.totalTweets != 0):
 			EarnedPoints = -10
 			Update = 1
 			self.set('lastUpdate',TimeNow)
 		else:
 			EarnedPoints = NewTweetCount - LastTweetCount
-			if(EarnedPoints > 0 && NewTweetCount/LastTweetCount >= 1.5 && NewTweetCount/self.totalTweets > 0.1):
+			if(EarnedPoints > 0 and NewTweetCount/LastTweetCount >= 1.5 and NewTweetCount/self.totalTweets > 0.1):
 				EarnedPoints = EarnedPoints + 10
 				Update = 1
-			elif (EarnedPoints > 0 && NewTweetCount/LastTweetCount >= 1.5 && NewTweetCount/self.totalTweets <= 0.1):
+			elif (EarnedPoints > 0 and NewTweetCount/LastTweetCount >= 1.5 and NewTweetCount/self.totalTweets <= 0.1):
 				EarnedPoints = EarnedPoints + 5
 				Update = 1
-			elif (EarnedPoints > 0 && NewTweetCount/LastTweetCount < 1.5 && NewTweetCount/self.totalTweets > 0.1):
+			elif (EarnedPoints > 0 and NewTweetCount/LastTweetCount < 1.5 and NewTweetCount/self.totalTweets > 0.1):
 				EarnedPoints = EarnedPoints + 5
 				Update = 1
-			elif (EarnedPoints > 0 && NewTweetCount/LastTweetCount < 1.5 && NewTweetCount/self.totalTweets <= 0.1):
+			elif (EarnedPoints > 0 and NewTweetCount/LastTweetCount < 1.5 and NewTweetCount/self.totalTweets <= 0.1):
 				Update = 1
-			elif (EarnedPoints < 0 && NewTweetCount/LastTweetCount >= 0.5 && NewTweetCount/self.totalTweets > 0.1):
+			elif (EarnedPoints < 0 and NewTweetCount/LastTweetCount >= 0.5 and NewTweetCount/self.totalTweets > 0.1):
 				EarnedPoints = 0.5*EarnedPoints
 				Update = 1
-			elif (EarnedPoints < 0 && NewTweetCount/LastTweetCount < 0.5 && NewTweetCount/self.totalTweets > 0.1):
+			elif (EarnedPoints < 0 and NewTweetCount/LastTweetCount < 0.5 and NewTweetCount/self.totalTweets > 0.1):
 				EarnedPoints = 0.75*EarnedPoints
 				Update = 1
 			else:
