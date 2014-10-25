@@ -11,7 +11,7 @@ from datetime import date
 from game import Game
 
 class gameTest:
-	lastUpdate = date.today();
+	lastUpdate = date.today(); #Get today's date
 	AreaTest = Game('County','Essex',249,500,150,lastUpdate,15000,'NJ')
 	AttrVal = ['County','Essex',249,500,150,lastUpdate,15000,'NJ']
 	
