@@ -1,0 +1,1073 @@
+/* -------------------------------- WEB FONTS CSS -------------------------------- */
+@-zs-include webfonts(PT Sans/Raleway);
+/* -------------------------------- PRESET CSS -------------------------------- */
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, li {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+body {
+ background-attachment:$BGAttachment1[scroll];
+ background-color:$BGColor1[#f3f3f3];
+ background-image:$BGImage1[none];
+ background-position:$BGPosition1[0 0];
+ background-repeat:$BGRepeat1[repeat];
+ background-size:$BGSize1[auto];
+ font-family:$BodyFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$BodyFontSize[14px];
+ color:$BodyTextColor[#777777];
+}
+h1 {
+font-family:$BodyH1FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyH1FontSize[28px];
+color:$BodyH1TextColor[#ecc012];
+}
+h2 {
+font-family:$BodyH2FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyH2FontSize[24px];
+color:$BodyH2TextColor[#ecc012];
+}
+h3 {
+font-family:$BodyH3FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyH3FontSize[22px];
+color:$BodyH3TextColor[#ecc012];
+}
+h4 {
+font-family:$BodyH4FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyH4FontSize[20px];
+color:$BodyH4TextColor[#ecc012];
+}
+h5 {
+font-family:$BodyH5FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyH5FontSize[18px];
+color:$BodyH5TextColor[#ecc012];
+}
+h6 {
+font-family:$BodyH6FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyH6FontSize[16px];
+color:$BodyH6TextColor[#ecc012];
+}
+a {
+ color:$BodyAColor[#ecc012];
+ text-decoration:$BodyATextDecoration[none];
+}
+a:hover {
+ text-decoration:$BodyAHoverTextDecoration[none];
+ color:$BodyAHoverColor[#ecc012];
+}
+p {
+    line-height: 1.6;
+}
+a img {
+    border: 0 solid
+}
+:focus {
+    outline: none;
+}
+ul, ol {
+    padding: 0 0 0 25px;
+}
+ol {
+    padding: 0 0 0 25px;
+}
+li {
+    padding: 5px 0;
+}
+hr {
+    border: 0;
+    border-top: 1px dashed #e6e5e5;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th {
+ font-family:$BodyTHFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$BodyTHFontSize[14px];
+ color:$BodyTHTextColor[#777777];
+ background:$BodyTHBGColor[#ffffff];
+ border-width:$BodyTHBorderWidth[1px];
+ border-style:$BodyTHBorderStyle[solid];
+ border-color:$BodyTHBorderColor[#e6e5e5];
+ padding:$BodyTHCellSpaceing[10px];
+    font-weight: normal;
+}
+td {
+ font-family:$BodyTDFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$BodyTDFontSize[14px];
+ color:$BodyTDTextColor[#777777];
+ background:$BodyTDBGColor[#f8f8f8];
+ border-width:$BodyTDBorderWidth[1px];
+ border-style:$BodyTDBorderStyle[solid];
+ border-color:$BodyTDBorderColor[#e6e5e5];
+ padding:$BodyTDCellSpaceing[10px];
+}
+/* -------------------------------- COMMEN USAGE CSS -------------------------------- */
+.floatLeft {
+    float: left;
+}
+.floatRight {
+    float: right;
+}
+.clearDiv {
+    clear: both;
+}
+.themeWidth {
+    width: 1000px;
+    margin: 0 auto;
+}
+/* -------------------------------- SOCIAL ICON & SEARCH BOX AREA CSS -------------------------------- */
+.themeSocialIconAndSearchBoxContainer {
+    height: 80px;
+}
+/* -------------------------------- SEARCH BOX AREA CSS -------------------------------- */
+.themeSearchContainer {
+    margin: 25px 0 0 0;
+    float: right;
+}
+.themeSearchBox {
+    width: 200px;
+    height: 26px;
+    position: relative;
+}
+.themeSearchBox input[type=text] {
+    background: #ffffff;
+    padding: 0 5px;
+    height: 26px;
+    outline: none;
+    width: 155px;
+    font-family: 'PT Sans', Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    color: #777777;
+    line-height: 26px;
+    border: 1px solid #e7e7e7;
+}
+.themeSearchBox input[type=submit] {
+    width: 28px;
+    height: 26px;
+    background: url(images/searchicon.png) center center no-repeat #ecc012;
+    border: 0 solid;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+/* -------------------------------- CONTENT AREA CSS -------------------------------- */
+.themeContentContainer {
+    padding: 30px;
+ background-color:$ContentBGColor[#ffffff];
+ background-image:$ContentBGImage[none];
+ background-position:$ContentBGPosition[0 0];
+ background-repeat:$ContentBGRepeat[repeat];
+ background-attachment:$ContentBGAttachment[scroll];
+ background-size:$ContentBGSize[auto];
+ box-shadow: $ContentBoxOuterShadowXaxis[0px] $ContentBoxOuterShadowYaxis[0px] $ContentBoxOuterShadowBlur[6px] $ContentBoxOuterShadowSpread[0px] $ContentBoxOuterShadowColor[rgba(0,0,0,0.1)], $ContentBoxInnerShadowXaxis[0px] $ContentBoxInnerShadowYaxis[0px] $ContentBoxInnerShadowBlur[0px] $ContentBoxInnerShadowSpread[0px] $ContentBoxInnerShadowColor[transparent] inset;
+ -moz-box-shadow: $ContentBoxOuterShadowXaxis[0px] $ContentBoxOuterShadowYaxis[0px] $ContentBoxOuterShadowBlur[6px] $ContentBoxOuterShadowSpread[0px] $ContentBoxOuterShadowColor[rgba(0,0,0,0.1)], $ContentBoxInnerShadowXaxis[0px] $ContentBoxInnerShadowYaxis[0px] $ContentBoxInnerShadowBlur[0px] $ContentBoxInnerShadowSpread[0px] $ContentBoxInnerShadowColor[transparent] inset;
+ -o-box-shadow: $ContentBoxOuterShadowXaxis[0px] $ContentBoxOuterShadowYaxis[0px] $ContentBoxOuterShadowBlur[6px] $ContentBoxOuterShadowSpread[0px] $ContentBoxOuterShadowColor[rgba(0,0,0,0.1)], $ContentBoxInnerShadowXaxis[0px] $ContentBoxInnerShadowYaxis[0px] $ContentBoxInnerShadowBlur[0px] $ContentBoxInnerShadowSpread[0px] $ContentBoxInnerShadowColor[transparent] inset;
+ -webkit-box-shadow: $ContentBoxOuterShadowXaxis[0px] $ContentBoxOuterShadowYaxis[0px] $ContentBoxOuterShadowBlur[6px] $ContentBoxOuterShadowSpread[0px] $ContentBoxOuterShadowColor[rgba(0,0,0,0.1)], $ContentBoxInnerShadowXaxis[0px] $ContentBoxInnerShadowYaxis[0px] $ContentBoxInnerShadowBlur[0px] $ContentBoxInnerShadowSpread[0px] $ContentBoxInnerShadowColor[transparent] inset;
+ border-radius: $ContentBorderRadius[0];
+ -moz-border-radius:$ContentBorderRadius[0];
+ -webkit-border-radius:$ContentBorderRadius[0];
+ -o-border-radius:$ContentBorderRadius[0];
+ border-width: $ContentBorderWidth[0];
+ border-style:$ContentBorderStyle[none];
+ border-color:$ContentBorderColor[transparent];
+}
+.themeBrandingArea {
+    padding-bottom: 15px;
+}
+.themeBrandingContainer {
+    display: table;
+    border: 0 solid;
+    width: 100%;
+}
+.tableRow {
+    display: table-row;
+}
+.tableCell {
+    display: table-cell
+}
+.themeLogoOuterContainer {
+    width: 1%;
+}
+.themeLogoArea {
+    padding-right: 15px;
+}
+.themeSitenameCaptionOuterContainer {
+    vertical-align:middle;
+    height: 100%
+}
+.themeSitenameCaptionInnerContainer {
+    height: 100%;
+    vertical-align:middle;
+}
+.themeSitenameCaptionContainer {
+    vertical-align: middle;
+    height: 100%;
+}
+.themeSitename {
+    white-space: nowrap;
+    font-family:$SiteNameFontFamily['Raleway', Verdana, Geneva, sans-serif];
+ font-size:$SiteNameFontSize[34px];
+ color:$SiteNameTextColor[#ecc012];
+}
+.themeCaption {
+    white-space: nowrap;
+    font-family:$CaptionFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$CaptionFontSize[13px];
+ color:$CaptionTextColor[#626262];
+}
+/* -------------------------------- NAVIGATION AREA CSS -------------------------------- */
+.themeNavigationContainer {
+ background-color:$NavigationBGColor[#363636];
+ background-image:$NavigationBGImage[ url(images/navBg.png)];
+ background-repeat:$NavigationBGRepeat[repeat-x];
+ background-position:$NavigationBGPosition[left top];
+    border-bottom: 2px solid #f05959;
+    height: 58px;
+}
+#navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#navigation li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+#navigation li a {
+ font-family:$NavigationFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ color:$NavigationAColor[#ffffff];
+ font-size:$NavigationFontSize[15px];
+    text-transform: capitalize;
+    float: left;
+    padding: 0 25px;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 4;
+    display: block;
+    text-shadow: 0 1px 0 #000000;
+    -webkit-text-shadow: 0 1px 0 #000000;
+    -moz-text-shadow: 0 1px 0 #000000;
+    -o-text-shadow: 0 1px 0 #000000;
+}
+#navigation li.selected {
+ background-color:$NavigationBGSelectedColor[transparent];
+ background-image:$NavigationBGSelectedImage[none];
+ background-repeat:$NavigationBGSelectedRepeat[repeat];
+ background-position:$NavigationBGSelectedPosition[left top];
+}
+#navigation li.selected a, #navigation li:hover a, #navigation li.active a {
+ color:$NavigationAHoverColor[#ecc012];
+}
+#navigation li a span {
+    float: left;
+}
+#navigation li.navArrow a em, #navigation li:hover.navArrow a em, #navigation li.active.navArrow a em, #navigation li.selected.navArrow a em {
+    background: transparent url(images/navArrow.png) no-repeat scroll 0 0;
+    display: block;
+    float: left;
+    height: 8px;
+    width: 7px;
+    margin: 30px 0 0 10px;
+}
+#navigation li:hover.navArrow a em, #navigation li.active.navArrow a em, #navigation li.selected.navArrow a em {
+    background: url(images/navArrowHover.png) no-repeat scroll 0 0;
+}
+/* -------------------------------- SUBMNU AREA CSS -------------------------------- */
+.submenu {
+    width: 200px;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+ background-color:$SubmenuBGColor[#3d3d3d];
+background-image:$SubmenuBGImage[none];
+background-position:$SubmenuBGPosition[top left];
+background-repeat:$SubmenuBGRepeat[repeat];
+ border-width:$SubmenuBorderWidth[0];
+border-style:$SubmenuBorderStyle[none];
+border-color:$SubmenuBorderColor[ transparent];
+ border-radius:$SubmenuBorderRadius[0];
+-moz-border-radius:$SubmenuBorderRadius[0];
+-webkit-border-radius:$SubmenuBorderRadius[0];
+-o-border-radius:$SubmenuBorderRadius[0];
+-webkit-transition:height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+-moz-transition:height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+-o-transition:height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+-ms-transition:height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+transition:height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+}
+.submenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1px;
+    line-height: 0;
+}
+.submenu li {
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.submenu li a {
+ color:$SubmenuTextColor[#ffffff];
+ font-size:$SubmenuFontSize[14px];
+ font-family:$SubmenuFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    line-height: 1.7;
+    padding: 5px 0;
+    float: left;
+    cursor: pointer;
+}
+.submenu li a:hover {
+ color:$SubmenuTextHoverColor[#ecc012];
+ background-color:$SubmenuBGHoverColor[transparent];
+background-image:$SubmenuBGHoverImage[none];
+background-position:$SubmenuBGHoverPosition[top left];
+background-repeat:$SubmenuBGHoverRepeat[repeat];
+}
+.submenu li a span {
+    width: 165px;
+    float: left;
+    padding-left: 10px;
+    word-wrap: break-word;
+}
+.submenu li.navArrow a em, .submenu li:hover.navArrow a em {
+    background: url(images/subnavArrow.png) left top no-repeat;
+    float: left;
+    height: 10px;
+    width: 10px;
+    margin-top: 10px;
+    margin-left: 9px;
+}
+.submenu li:hover.navArrow a em {
+    background: url(images/subnavArrowHover.png) left top no-repeat;
+}
+/* -------------------------------- THEME BREADCRUMB AREA CSS -------------------------------- */
+.themeBreadcrumb {
+    padding: 25px 0;
+}
+.themeBreadcrumb span {
+    padding: 0 10px;
+}
+.themeBreadcrumb p {
+    word-wrap: break-word;
+}
+/* -------------------------------- THEME CONTENT AREA CSS -------------------------------- */
+.themeContentArea {
+    padding: 30px 0;
+    width:70%;
+    min-height: 400px;
+    height: auto !important;
+    height: 400px;
+}
+/* -------------------------------- THEME SIDEBAR AREA CSS -------------------------------- */
+.themeSidebarArea {
+    width: 30%;
+}
+.themeSidebarAreaInner {
+    font-family:$SidebarFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$SidebarFontSize[14px];
+ color:$SidebarTextColor[#777777];
+background-color:$SidebarBGColor[ transparent];
+ background-image:$SidebarBGImage[none];
+ background-position:$SidebarBGPosition[0 0];
+ background-repeat:$SidebarBGRepeat[repeat];
+ background-attachment:$SidebarBGAttachment[scroll];
+ background-size:$SidebarBGSize[auto];
+ box-shadow: $SidebarBoxOuterShadowXaxis[0px] $SidebarBoxOuterShadowYaxis[0px] $SidebarBoxOuterShadowBlur[0px] $SidebarBoxOuterShadowSpread[0px] $SidebarBoxOuterShadowColor[transparent], $SidebarBoxInnerShadowXaxis[0px] $SidebarBoxInnerShadowYaxis[0px] $SidebarBoxInnerShadowBlur[0px] $SidebarBoxInnerShadowSpread[0px] $SidebarBoxInnerShadowColor[transparent] inset;
+ -webkit-box-shadow: $SidebarBoxOuterShadowXaxis[0px] $SidebarBoxOuterShadowYaxis[0px] $SidebarBoxOuterShadowBlur[0px] $SidebarBoxOuterShadowSpread[0px] $SidebarBoxOuterShadowColor[transparent], $SidebarBoxInnerShadowXaxis[0px] $SidebarBoxInnerShadowYaxis[0px] $SidebarBoxInnerShadowBlur[0px] $SidebarBoxInnerShadowSpread[0px] $SidebarBoxInnerShadowColor[transparent] inset;
+ -moz-box-shadow: $SidebarBoxOuterShadowXaxis[0px] $SidebarBoxOuterShadowYaxis[0px] $SidebarBoxOuterShadowBlur[0px] $SidebarBoxOuterShadowSpread[0px] $SidebarBoxOuterShadowColor[transparent], $SidebarBoxInnerShadowXaxis[0px] $SidebarBoxInnerShadowYaxis[0px] $SidebarBoxInnerShadowBlur[0px] $SidebarBoxInnerShadowSpread[0px] $SidebarBoxInnerShadowColor[transparent] inset;
+ -o-box-shadow: $SidebarBoxOuterShadowXaxis[0px] $SidebarBoxOuterShadowYaxis[0px] $SidebarBoxOuterShadowBlur[0px] $SidebarBoxOuterShadowSpread[0px] $SidebarBoxOuterShadowColor[transparent], $SidebarBoxInnerShadowXaxis[0px] $SidebarBoxInnerShadowYaxis[0px] $SidebarBoxInnerShadowBlur[0px] $SidebarBoxInnerShadowSpread[0px] $SidebarBoxInnerShadowColor[transparent] inset;
+ border-width: $SidebarBorderWidth[0px];
+ border-style:$SidebarBorderStyle[none];
+ border-color:$SidebarBorderColor[ transparent];
+ border-radius: $SidebarBorderRadius[0px];
+ -moz-border-radius:$SidebarBorderRadius[0px];
+ -webkit-border-radius:$SidebarBorderRadius[0px];
+ -o-border-radius:$SidebarBorderRadius[0px];
+    min-height: 300px;
+    height: auto !important;
+    height: 300px;
+    margin-left: 30px;
+    padding: 30px 0;
+}
+.themeSidebarAreaInner h1 {
+font-family:$SidebarH1FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarH1FontSize[28px];
+color:$SidebarH1TextColor[#ecc012];
+}
+.themeSidebarAreaInner h2 {
+font-family:$SidebarH2FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarH2FontSize[24px];
+color:$SidebarH2TextColor[#ecc012];
+}
+.themeSidebarAreaInner h3 {
+font-family:$SidebarH3FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarH3FontSize[22px];
+color:$SidebarH3TextColor[#ecc012];
+}
+.themeSidebarAreaInner h4 {
+font-family:$SidebarH4FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarH4FontSize[20px];
+color:$SidebarH4TextColor[#ecc012];
+}
+.themeSidebarAreaInner h5 {
+font-family:$SidebarH5FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarH5FontSize[18px];
+color:$SidebarH5TextColor[#ecc012];
+}
+.themeSidebarAreaInner h6 {
+font-family:$SidebarH6FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarH6FontSize[16px];
+color:$SidebarH6TextColor[#ecc012];
+}
+.themeSidebarAreaInner a {
+ color:$SidebarAColor[#ecc012];
+ text-decoration:$SidebarATextDecoration[none];
+}
+.themeSidebarAreaInner a:hover {
+ text-decoration:$SidebarAHoverTextDecoration[none];
+ color:$SidebarAHoverColor[#ecc012];
+}
+.themeSidebarAreaInner form li span input[type=text], .themeSidebarAreaInner form li span textarea {
+    width: 200px;
+}
+.themeSidebarAreaInner form li span select {
+    width: 213px;
+}
+.themeSidebarAreaInner form ul li label, .themeSidebarAreaInner form ul li div {
+    width: auto;
+    float: none;
+    padding: 5px 0;
+}
+.themeSidebarAreaInner th {
+ font-family:$SidebarTHFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$SidebarTHFontSize[14px];
+ color:$SidebarTHTextColor[#777777];
+ background:$SidebarTHBGColor[#ffffff];
+ border-width:$SidebarTHBorderWidth[1px];
+ border-style:$SidebarTHBorderStyle[solid];
+ border-color:$SidebarTHBorderColor[#e6e5e5];
+ padding:$SidebarTHCellSpaceing[10px];
+    font-weight: normal;
+}
+.themeSidebarAreaInner td {
+ font-family:$SidebarTDFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$SidebarTDFontSize[14px];
+ color:$SidebarTDTextColor[#777777];
+ background:$SidebarTDBGColor[#f8f8f8];
+ border-width:$SidebarTDBorderWidth[1px];
+ border-style:$SidebarTDBorderStyle[solid];
+ border-color:$SidebarTDBorderColor[#e6e5e5];
+ padding:$SidebarTDCellSpaceing[10px];
+}
+.themeSidebarAreaInner .zs-highlight-box {
+ background-color: $SidebarHighlightBoxBGColor[#434343];
+ background-image: $SidebarHighlightBoxBGImage[none];
+ background-image: $SidebarHighlightBoxBGImage[none], -moz-linear-gradient($SidebarHighlightBoxGradientDirection[top], $SidebarHighlightBoxGradientStartColor[transparent], $SidebarHighlightBoxGradientEndColor[transparent]);
+ background-image: $SidebarHighlightBoxBGImage[none], -webkit-linear-gradient($SidebarHighlightBoxGradientDirection[top], $SidebarHighlightBoxGradientStartColor[transparent], $SidebarHighlightBoxGradientEndColor[transparent]);
+ background-image: $SidebarHighlightBoxBGImage[none], -o-linear-gradient($SidebarHighlightBoxGradientDirection[top], $SidebarHighlightBoxGradientStartColor[transparent], $SidebarHighlightBoxGradientEndColor[transparent]);
+ background-position: $SidebarHighlightBoxBGPosition[top left];
+ background-repeat: $SidebarHighlightBoxBGRepeat[no-repeat];
+ box-shadow: $SidebarHighlightBoxOuterXaxis[0px] $SidebarHighlightBoxOuterYaxis[0px] $SidebarHighlightBoxOuterBlur[5px] $SidebarHighlightBoxOuterSpread[0px] $SidebarHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $SidebarHighlightBoxInnerXaxis[0px] $SidebarHighlightBoxInnerYaxis[0px] $SidebarHighlightBoxInnerBlur[0px] $SidebarHighlightBoxInnerSpread[0] $SidebarHighlightBoxInnerShadowColor[transparent] inset;
+ -moz-box-shadow: $SidebarHighlightBoxOuterXaxis[0px] $SidebarHighlightBoxOuterYaxis[0px] $SidebarHighlightBoxOuterBlur[5px] $SidebarHighlightBoxOuterSpread[0px] $SidebarHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $SidebarHighlightBoxInnerXaxis[0px] $SidebarHighlightBoxInnerYaxis[0px] $SidebarHighlightBoxInnerBlur[0px] $SidebarHighlightBoxInnerSpread[0] $SidebarHighlightBoxInnerShadowColor[transparent] inset;
+ -webkit-box-shadow: $SidebarHighlightBoxOuterXaxis[0px] $SidebarHighlightBoxOuterYaxis[0px] $SidebarHighlightBoxOuterBlur[5px] $SidebarHighlightBoxOuterSpread[0px] $SidebarHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $SidebarHighlightBoxInnerXaxis[0px] $SidebarHighlightBoxInnerYaxis[0px] $SidebarHighlightBoxInnerBlur[0px] $SidebarHighlightBoxInnerSpread[0] $SidebarHighlightBoxInnerShadowColor[transparent] inset;
+ -o-box-shadow: $SidebarHighlightBoxOuterXaxis[0px] $SidebarHighlightBoxOuterYaxis[0px] $SidebarHighlightBoxOuterBlur[5px] $SidebarHighlightBoxOuterSpread[0px] $SidebarHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $SidebarHighlightBoxInnerXaxis[0px] $SidebarHighlightBoxInnerYaxis[0px] $SidebarHighlightBoxInnerBlur[0px] $SidebarHighlightBoxInnerSpread[0] $SidebarHighlightBoxInnerShadowColor[transparent] inset;
+ border-width: $SidebarHighlightBoxBorderWidth[0];
+ border-style:$SidebarHighlightBoxBorderStyle[none];
+ border-color:$SidebarHighlightBoxBorderColor[transparent];
+ border-radius: $SidebarHighlightBoxBorderRadius[0];
+ -moz-border-radius:$SidebarHighlightBoxBorderRadius[0];
+ -webkit-border-radius:$SidebarHighlightBoxBorderRadius[0];
+ -o-border-radius:$SidebarHighlightBoxBorderRadius[0];
+ padding: $SidebarHighlightBoxInnerSpace[10px];
+ margin: $SidebarHighlightBoxOuterSpace[5px];
+    min-height: 200px;
+font-family:$SidebarHighlightBoxFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$SidebarHighlightBoxFontSize[14px];
+ color:$SidebarHighlightBoxTextColor[#7A7A7A];
+}
+.themeSidebarAreaInner .zs-highlight-box h1 {
+font-family:$SidebarHighlightBoxH1FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarHighlightBoxH1FontSize[28px];
+color:$SidebarHighlightBoxH1TextColor[#ecc012];
+}
+.themeSidebarAreaInner .zs-highlight-box h2 {
+font-family:$SidebarHighlightBoxH2FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarHighlightBoxH2FontSize[24px];
+color:$SidebarHighlightBoxH2TextColor[#ecc012];
+}
+.themeSidebarAreaInner .zs-highlight-box h3 {
+font-family:$SidebarHighlightBoxH3FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarHighlightBoxH3FontSize[22px];
+color:$SidebarHighlightBoxH3TextColor[#ecc012];
+}
+.themeSidebarAreaInner .zs-highlight-box h4 {
+font-family:$SidebarHighlightBoxH4FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarHighlightBoxH4FontSize[20px];
+color:$SidebarHighlightBoxH4TextColor[#ecc012];
+}
+.themeSidebarAreaInner .zs-highlight-box h5 {
+font-family:$SidebarHighlightBoxH5FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarHighlightBoxH5FontSize[18px];
+color:$SidebarHighlightBoxH5TextColor[#ecc012];
+}
+.themeSidebarAreaInner .zs-highlight-box h6 {
+font-family:$SidebarHighlightBoxH6FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$SidebarHighlightBoxH6FontSize[16px];
+color:$SidebarHighlightBoxH6TextColor[#ecc012];
+}
+.themeSidebarAreaInner .zs-highlight-box a {
+ text-decoration:$SidebarHighlightBoxATextDecoration[none];
+color:$SidebarHighlightBoxAColor[#ecc012];
+}
+.themeSidebarAreaInner .zs-highlight-box a:hover {
+text-decoration:$SidebarHighlightBoxAHoverTextDecoration[none];
+color:$SidebarHighlightBoxAHoverColor[#ecc012];
+}
+.themeSidebarAreaInner .zs-highlight-box hr {
+    border-top-color:#313030;
+}
+.themeSidebarAreaInner .zs-highlight-box form li span input[type=text], .themeSidebarAreaInner .zs-highlight-box form li span textarea, .themeSidebarAreaInner .zs-highlight-box form li span select {
+width:170px;
+background: #535353;
+border: 1px solid #3F3C3C;
+color:$SidebarHighlightBoxTextColor[#7A7A7A];
+}
+.themeSidebarAreaInner .zs-highlight-box form li span select {
+    width:183px;
+}
+.themeSidebarAreaInner .zs-highlight-box form li input[type=reset] {
+background: #353434;
+}
+.themeSidebarAreaInner .zs-highlight-box th {
+ font-family:$SidebarHighlightBoxTHFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$SidebarHighlightBoxTHFontSize[14px];
+ color:$SidebarHighlightBoxTHTextColor[#6D6D6D];
+ background:$SidebarHighlightBoxTHBGColor[#313131];
+ border-width:$SidebarHighlightBoxTHBorderWidth[1px];
+ border-style:$SidebarHighlightBoxTHBorderStyle[solid];
+ border-color:$SidebarHighlightBoxTHBorderColor[#434343];
+ padding:$SidebarHighlightBoxTHCellSpaceing[10px];
+    font-weight: normal;
+}
+.themeSidebarAreaInner .zs-highlight-box td {
+ font-family:$SidebarHighlightBoxTDFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$SidebarHighlightBoxTDFontSize[14px];
+ color:$SidebarHighlightBoxTDTextColor[#777777];
+ background:$SidebarHighlightBoxTDBGColor[#f8f8f8];
+ border-width:$SidebarHighlightBoxTDBorderWidth[1px];
+ border-style:$SidebarHighlightBoxTDBorderStyle[solid];
+ border-color:$SidebarHighlightBoxTDBorderColor[#e6e5e5];
+ padding:$SidebarHighlightBoxTDCellSpaceing[10px];
+}
+/* ------------------------------------ text highlight CSS ------------------------------------------------*/
+.themeSidebarAreaInner .zs-text-light-color {
+color:$SidebarTextLightColor[#BFBFBF]
+}
+.themeSidebarAreaInner .zs-text-highlight-color {
+color:$SidebarTextHighlightColor[#ECC012]
+}
+.themeSidebarAreaInner .zs-highlight-box .zs-text-light-color {
+color:$SidebarHighlightBoxTextLightColor[#BFBFBF]
+}
+.themeSidebarAreaInner .zs-highlight-box .zs-text-highlight-color {
+color:$SidebarHighlightBoxTextHighlightColor[#ECC012]
+}
+/* -------------------------------- THEME FOOTER AREA CSS -------------------------------- */
+.themeFooterArea {
+background-color:$FooterBGColor[#3b3b3b];
+ background-image:$FooterBGImage[none];
+ background-position:$FooterBGPosition[0 0];
+ background-repeat:$FooterBGRepeat[repeat-X];
+ background-attachment:$FooterBGAttachment[scroll];
+ background-size:$FooterBGSize[auto];
+ box-shadow: $FooterBoxOuterShadowXaxis[0px] $FooterBoxOuterShadowYaxis[0px] $FooterBoxOuterShadowBlur[0px] $FooterBoxOuterShadowSpread[0px] $FooterBoxOuterShadowColor[ transparent], $FooterBoxInnerShadowXaxis[0px] $FooterBoxInnerShadowYaxis[0px] $FooterBoxInnerShadowBlur[0px] $FooterBoxInnerShadowSpread[0px] $FooterBoxInnerShadowColor[transparent] inset;
+-moz-box-shadow: $FooterBoxOuterShadowXaxis[0px] $FooterBoxOuterShadowYaxis[0px] $FooterBoxOuterShadowBlur[0px] $FooterBoxOuterShadowSpread[0px] $FooterBoxOuterShadowColor[ transparent], $FooterBoxInnerShadowXaxis[0px] $FooterBoxInnerShadowYaxis[0px] $FooterBoxInnerShadowBlur[0px] $FooterBoxInnerShadowSpread[0px] $FooterBoxInnerShadowColor[transparent] inset;
+-webkit-box-shadow: $FooterBoxOuterShadowXaxis[0px] $FooterBoxOuterShadowYaxis[0px] $FooterBoxOuterShadowBlur[0px] $FooterBoxOuterShadowSpread[0px] $FooterBoxOuterShadowColor[ transparent], $FooterBoxInnerShadowXaxis[0px] $FooterBoxInnerShadowYaxis[0px] $FooterBoxInnerShadowBlur[0px] $FooterBoxInnerShadowSpread[0px] $FooterBoxInnerShadowColor[transparent] inset;
+-o-box-shadow: $FooterBoxOuterShadowXaxis[0px] $FooterBoxOuterShadowYaxis[0px] $FooterBoxOuterShadowBlur[0px] $FooterBoxOuterShadowSpread[0px] $FooterBoxOuterShadowColor[ transparent], $FooterBoxInnerShadowXaxis[0px] $FooterBoxInnerShadowYaxis[0px] $FooterBoxInnerShadowBlur[0px] $FooterBoxInnerShadowSpread[0px] $FooterBoxInnerShadowColor[transparent] inset;
+border-width:$FooterBorderWidth[0];
+ border-style:$FooterBorderStyle[none];
+ border-color:$FooterBorderColor[transparent];
+ border-radius: $FooterBorderRadius[0px];
+ -moz-border-radius:$FooterBorderRadius[0px];
+ -webkit-border-radius:$FooterBorderRadius[0px];
+ -o-border-radius:$FooterBorderRadius[0px];
+ font-family:$FooterFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$FooterFontSize[14px];
+ color:$FooterTextColor[#777777];
+    min-height: 200px;
+    height: auto !important;
+    height: 200px;
+    padding: 30px;
+    margin: 0 -30px -30px;
+}
+.themeFooterArea h1 {
+font-family:$FooterH1FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterH1FontSize[28px];
+color:$FooterH1TextColor[#ecc012];
+}
+.themeFooterArea h2 {
+font-family:$FooterH2FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterH2FontSize[24px];
+color:$FooterH2TextColor[#ecc012];
+}
+.themeFooterArea h3 {
+font-family:$FooterH3FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterH3FontSize[22px];
+color:$FooterH3TextColor[#ecc012];
+}
+.themeFooterArea h4 {
+font-family:$FooterH4FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterH4FontSize[20px];
+color:$FooterH4TextColor[#ecc012];
+}
+.themeFooterArea h5 {
+font-family:$FooterH5FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterH5FontSize[18px];
+color:$FooterH5TextColor[#ecc012];
+}
+.themeFooterArea h6 {
+font-family:$FooterH6FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterH6FontSize[16px];
+color:$FooterH6TextColor[#ecc012];
+}
+.themeFooterArea a {
+ color:$FooterAColor[#ecc012];
+ text-decoration:$FooterATextDecoration[none];
+}
+.themeFooterArea a:hover {
+ text-decoration:$FooterAHoverTextDecoration[none];
+ color:$FooterAHoverColor[#ecc012];
+}
+.themeFooterArea form li span input[type=text], .themeFooterArea form li span textarea, .themeFooterArea form li span select {
+    background: #373737;
+    border: 1px solid #333333;
+}
+.themeFooterArea form li input[type=reset] {
+    background: #2B2B2B;
+}
+.themeFooterArea th {
+ font-family:$FooterTHFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$FooterTHFontSize[14px];
+ color:$FooterTHTextColor[#777777];
+ background:$FooterTHBGColor[#2D2D2D];
+ border-width:$FooterTHBorderWidth[1px];
+ border-style:$FooterTHBorderStyle[solid];
+ border-color:$FooterTHBorderColor[#282828];
+ padding:$FooterTHCellSpaceing[10px];
+    font-weight: normal;
+}
+.themeFooterArea td {
+ font-family:$FooterTDFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$FooterTDFontSize[14px];
+ color:$FooterTDTextColor[#777777];
+ background:$FooterTDBGColor[transparent];
+ border-width:$FooterTDBorderWidth[1px];
+ border-style:$FooterTDBorderStyle[solid];
+ border-color:$FooterTDBorderColor[#343434];
+ padding:$FooterTDCellSpaceing[10px];
+}
+.themeFooterArea .zs-highlight-box {
+ background-color: $FooterHighlightBoxBGColor[#ecc012];
+ background-image: $FooterHighlightBoxBGImage[none];
+ background-image: $FooterHighlightBoxBGImage[none], -moz-linear-gradient($FooterHighlightBoxGradientDirection[top], $FooterHighlightBoxGradientStartColor[transparent], $FooterHighlightBoxGradientEndColor[transparent]);
+ background-image: $FooterHighlightBoxBGImage[none], -webkit-linear-gradient($FooterHighlightBoxGradientDirection[top], $FooterHighlightBoxGradientStartColor[transparent], $FooterHighlightBoxGradientEndColor[transparent]);
+ background-image: $FooterHighlightBoxBGImage[none], -o-linear-gradient($FooterHighlightBoxGradientDirection[top], $FooterHighlightBoxGradientStartColor[transparent], $FooterHighlightBoxGradientEndColor[transparent]);
+ background-position: $FooterHighlightBoxBGPosition[top left];
+ background-repeat: $FooterHighlightBoxBGRepeat[no-repeat];
+ box-shadow: $FooterHighlightBoxOuterXaxis[0px] $FooterHighlightBoxOuterYaxis[0px] $FooterHighlightBoxOuterBlur[5px] $FooterHighlightBoxOuterSpread[0px] $FooterHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $FooterHighlightBoxInnerXaxis[0px] $FooterHighlightBoxInnerYaxis[0px] $FooterHighlightBoxInnerBlur[0px] $FooterHighlightBoxInnerSpread[0] $FooterHighlightBoxInnerShadowColor[transparent] inset;
+ -moz-box-shadow: $FooterHighlightBoxOuterXaxis[0px] $FooterHighlightBoxOuterYaxis[0px] $FooterHighlightBoxOuterBlur[5px] $FooterHighlightBoxOuterSpread[0px] $FooterHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $FooterHighlightBoxInnerXaxis[0px] $FooterHighlightBoxInnerYaxis[0px] $FooterHighlightBoxInnerBlur[0px] $FooterHighlightBoxInnerSpread[0] $FooterHighlightBoxInnerShadowColor[transparent] inset;
+ -webkit-box-shadow: $FooterHighlightBoxOuterXaxis[0px] $FooterHighlightBoxOuterYaxis[0px] $FooterHighlightBoxOuterBlur[5px] $FooterHighlightBoxOuterSpread[0px] $FooterHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $FooterHighlightBoxInnerXaxis[0px] $FooterHighlightBoxInnerYaxis[0px] $FooterHighlightBoxInnerBlur[0px] $FooterHighlightBoxInnerSpread[0] $FooterHighlightBoxInnerShadowColor[transparent] inset;
+ -o-box-shadow: $FooterHighlightBoxOuterXaxis[0px] $FooterHighlightBoxOuterYaxis[0px] $FooterHighlightBoxOuterBlur[5px] $FooterHighlightBoxOuterSpread[0px] $FooterHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $FooterHighlightBoxInnerXaxis[0px] $FooterHighlightBoxInnerYaxis[0px] $FooterHighlightBoxInnerBlur[0px] $FooterHighlightBoxInnerSpread[0] $FooterHighlightBoxInnerShadowColor[transparent] inset;
+ border-width: $FooterHighlightBoxBorderWidth[0];
+ border-style:$FooterHighlightBoxBorderStyle[none];
+ border-color:$FooterHighlightBoxBorderColor[transparent];
+ border-radius: $FooterHighlightBoxBorderRadius[0];
+ -moz-border-radius:$FooterHighlightBoxBorderRadius[0];
+ -webkit-border-radius:$FooterHighlightBoxBorderRadius[0];
+ -o-border-radius:$FooterHighlightBoxBorderRadius[0];
+ padding: $FooterHighlightBoxInnerSpace[10px];
+ margin: $FooterHighlightBoxOuterSpace[5px];
+    min-height: 200px;
+font-family:$FooterHighlightBoxFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$FooterHighlightBoxFontSize[14px];
+ color:$FooterHighlightBoxTextColor[#FFEBA1];
+}
+.themeFooterArea .zs-highlight-box h1 {
+font-family:$FooterHighlightBoxH1FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterHighlightBoxH1FontSize[28px];
+color:$FooterHighlightBoxH1TextColor[#FF4242];
+}
+.themeFooterArea .zs-highlight-box h2 {
+font-family:$FooterHighlightBoxH2FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterHighlightBoxH2FontSize[24px];
+color:$FooterHighlightBoxH2TextColor[#FF4242];
+}
+.themeFooterArea .zs-highlight-box h3 {
+font-family:$FooterHighlightBoxH3FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterHighlightBoxH3FontSize[22px];
+color:$FooterHighlightBoxH3TextColor[#FF4242];
+}
+.themeFooterArea .zs-highlight-box h4 {
+font-family:$FooterHighlightBoxH4FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterHighlightBoxH4FontSize[20px];
+color:$FooterHighlightBoxH4TextColor[#FF4242];
+}
+.themeFooterArea .zs-highlight-box h5 {
+font-family:$FooterHighlightBoxH5FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterHighlightBoxH5FontSize[18px];
+color:$FooterHighlightBoxH5TextColor[#FF4242];
+}
+.themeFooterArea .zs-highlight-box h6 {
+font-family:$FooterHighlightBoxH6FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$FooterHighlightBoxH6FontSize[16px];
+color:$FooterHighlightBoxH6TextColor[#FF4242];
+}
+.themeFooterArea .zs-highlight-box a {
+ text-decoration:$FooterHighlightBoxATextDecoration[none];
+color:$FooterHighlightBoxAColor[#FF4242];
+}
+.themeFooterArea .zs-highlight-box a:hover {
+text-decoration:$FooterHighlightBoxAHoverTextDecoration[none];
+color:$FooterHighlightBoxAHoverColor[#FF4242];
+}
+.themeFooterArea .zs-highlight-box hr {
+    border-top-color:#FFDC24;
+}
+.themeFooterArea .zs-highlight-box th {
+ font-family:$FooterHighlightBoxTHFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$FooterHighlightBoxTHFontSize[14px];
+ color:$FooterHighlightBoxTHTextColor[#B93636];
+ background:$FooterHighlightBoxTHBGColor[#FFDA47];
+ border-width:$FooterHighlightBoxTHBorderWidth[1px];
+ border-style:$FooterHighlightBoxTHBorderStyle[solid];
+ border-color:$FooterHighlightBoxTHBorderColor[#ecc012];
+ padding:$FooterHighlightBoxTHCellSpaceing[10px];
+    font-weight: normal;
+}
+.themeFooterArea .zs-highlight-box td {
+ font-family:$FooterHighlightBoxTDFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$FooterHighlightBoxTDFontSize[14px];
+ color:$FooterHighlightBoxTDTextColor[#777777];
+ background:$FooterHighlightBoxTDBGColor[#f8f8f8];
+ border-width:$FooterHighlightBoxTDBorderWidth[1px];
+ border-style:$FooterHighlightBoxTDBorderStyle[solid];
+ border-color:$FooterHighlightBoxTDBorderColor[#CAA40C];
+ padding:$FooterHighlightBoxTDCellSpaceing[10px];
+}
+.themeFooterArea .zs-highlight-box form li span input[type=text], .themeFooterArea .zs-highlight-box form li span textarea, .themeFooterArea .zs-highlight-box form li span select {
+    background: #DFB304;
+border: 1px solid #F5C91C;
+color:$FooterHighlightBoxTextColor[#FFEBA1];
+}
+/* ------------------------------------ text highlight CSS ------------------------------------------------*/
+.themeFooterArea .zs-text-light-color {
+color:$FooterTextLightColor[#525252]
+}
+.themeFooterArea .zs-text-highlight-color {
+color:$FooterTextHighlightColor[#ECC012]
+}
+.themeFooterArea .zs-highlight-box .zs-text-light-color {
+color:$FooterHighlightBoxTextLightColor[#525252]
+}
+.themeFooterArea .zs-highlight-box .zs-text-highlight-color {
+color:$FooterHighlightBoxTextHighlightColor[#FF4242]
+}
+/* -------------------------------- THEME HIGLIGHT BOX AREA CSS -------------------------------- */
+.zs-highlight-box {
+background-color: $BodyHighlightBoxBGColor[#f05959];
+ background-image: $BodyHighlightBoxBGImage[none];
+ background-image: $BodyHighlightBoxBGImage[none], -moz-linear-gradient($BodyHighlightBoxGradientDirection[top], $BodyHighlightBoxGradientStartColor[transparent], $BodyHighlightBoxGradientEndColor[transparent]);
+ background-image: $BodyHighlightBoxBGImage[none], -webkit-linear-gradient($BodyHighlightBoxGradientDirection[top], $BodyHighlightBoxGradientStartColor[transparent], $BodyHighlightBoxGradientEndColor[transparent]);
+ background-image: $BodyHighlightBoxBGImage[none], -o-linear-gradient($BodyHighlightBoxGradientDirection[top], $BodyHighlightBoxGradientStartColor[transparent], $BodyHighlightBoxGradientEndColor[transparent]);
+ background-position: $BodyHighlightBoxBGPosition[top left];
+ background-repeat: $BodyHighlightBoxBGRepeat[no-repeat];
+ box-shadow: $BodyHighlightBoxOuterXaxis[0px] $BodyHighlightBoxOuterYaxis[0px] $BodyHighlightBoxOuterBlur[5px] $BodyHighlightBoxOuterSpread[0px] $BodyHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $BodyHighlightBoxInnerXaxis[0px] $BodyHighlightBoxInnerYaxis[0px] $BodyHighlightBoxInnerBlur[0px] $BodyHighlightBoxInnerSpread[0] $BodyHighlightBoxInnerShadowColor[transparent] inset;
+ -moz-box-shadow: $BodyHighlightBoxOuterXaxis[0px] $BodyHighlightBoxOuterYaxis[0px] $BodyHighlightBoxOuterBlur[5px] $BodyHighlightBoxOuterSpread[0px] $BodyHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $BodyHighlightBoxInnerXaxis[0px] $BodyHighlightBoxInnerYaxis[0px] $BodyHighlightBoxInnerBlur[0px] $BodyHighlightBoxInnerSpread[0] $BodyHighlightBoxInnerShadowColor[transparent] inset;
+ -webkit-box-shadow: $BodyHighlightBoxOuterXaxis[0px] $BodyHighlightBoxOuterYaxis[0px] $BodyHighlightBoxOuterBlur[5px] $BodyHighlightBoxOuterSpread[0px] $BodyHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $BodyHighlightBoxInnerXaxis[0px] $BodyHighlightBoxInnerYaxis[0px] $BodyHighlightBoxInnerBlur[0px] $BodyHighlightBoxInnerSpread[0] $BodyHighlightBoxInnerShadowColor[transparent] inset;
+ -o-box-shadow: $BodyHighlightBoxOuterXaxis[0px] $BodyHighlightBoxOuterYaxis[0px] $BodyHighlightBoxOuterBlur[5px] $BodyHighlightBoxOuterSpread[0px] $BodyHighlightBoxOuterShadowColor[rgba(0,0,0,0.5)], $BodyHighlightBoxInnerXaxis[0px] $BodyHighlightBoxInnerYaxis[0px] $BodyHighlightBoxInnerBlur[0px] $BodyHighlightBoxInnerSpread[0] $BodyHighlightBoxInnerShadowColor[transparent] inset;
+ border-width: $BodyHighlightBoxBorderWidth[0];
+ border-style:$BodyHighlightBoxBorderStyle[none];
+ border-color:$BodyHighlightBoxBorderColor[transparent];
+ border-radius: $BodyHighlightBoxBorderRadius[0];
+ -moz-border-radius:$BodyHighlightBoxBorderRadius[0];
+ -webkit-border-radius:$BodyHighlightBoxBorderRadius[0];
+ -o-border-radius:$BodyHighlightBoxBorderRadius[0];
+ padding: $BodyHighlightBoxInnerSpace[10px];
+ margin: $BodyHighlightBoxOuterSpace[5px];
+    min-height: 200px;
+font-family:$BodyHighlightBoxFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$BodyHighlightBoxFontSize[14px];
+ color:$BodyHighlightBoxTextColor[#FFC2C2];
+}
+.zs-highlight-box h1 {
+font-family:$BodyHighlightBoxH1FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyHighlightBoxH1FontSize[28px];
+color:$BodyHighlightBoxH1TextColor[#FFF0B5];
+}
+.zs-highlight-box h2 {
+font-family:$BodyHighlightBoxH2FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyHighlightBoxH2FontSize[24px];
+color:$BodyHighlightBoxH2TextColor[#FFF0B5];
+}
+.zs-highlight-box h3 {
+font-family:$BodyHighlightBoxH3FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyHighlightBoxH3FontSize[22px];
+color:$BodyHighlightBoxH3TextColor[#FFF0B5];
+}
+.zs-highlight-box h4 {
+font-family:$BodyHighlightBoxH4FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyHighlightBoxH4FontSize[20px];
+color:$BodyHighlightBoxH4TextColor[#FFF0B5];
+}
+.zs-highlight-box h5 {
+font-family:$BodyHighlightBoxH5FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyHighlightBoxH5FontSize[18px];
+color:$BodyHighlightBoxH5TextColor[#FFF0B5];
+}
+.zs-highlight-box h6 {
+font-family:$BodyHighlightBoxH6FontFamily['Raleway', Verdana, Geneva, sans-serif];
+font-size:$BodyHighlightBoxH6FontSize[16px];
+color:$BodyHighlightBoxH6TextColor[#FFF0B5];
+}
+.zs-highlight-box a {
+ text-decoration:$BodyHighlightBoxATextDecoration[none];
+color:$BodyHighlightBoxAColor[#FFF0B5];
+}
+.zs-highlight-box a:hover {
+text-decoration:$BodyHighlightBoxAHoverTextDecoration[none];
+color:$BodyHighlightBoxAHoverColor[#FFF0B5];
+}
+.zs-highlight-box hr {
+    border-top:1px solid #CA4C4C;
+}
+.zs-highlight-box th {
+ font-family:$BodyHighlightBoxTHFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$BodyHighlightBoxTHFontSize[14px];
+ color:$BodyHighlightBoxTHTextColor[#B93636];
+ background:$BodyHighlightBoxTHBGColor[#FF8383];
+ border-width:$BodyHighlightBoxTHBorderWidth[1px];
+ border-style:$BodyHighlightBoxTHBorderStyle[solid];
+ border-color:$BodyHighlightBoxTHBorderColor[#f05959];
+ padding:$BodyHighlightBoxTHCellSpaceing[10px];
+    font-weight: normal;
+}
+.zs-highlight-box td {
+ font-family:$BodyHighlightBoxTDFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$BodyHighlightBoxTDFontSize[14px];
+ color:$BodyHighlightBoxTDTextColor[#777777];
+ background:$BodyHighlightBoxTDBGColor[#f8f8f8];
+ border-width:$BodyHighlightBoxTDBorderWidth[1px];
+ border-style:$BodyHighlightBoxTDBorderStyle[solid];
+ border-color:$BodyHighlightBoxTDBorderColor[#e6e5e5];
+ padding:$BodyHighlightBoxTDCellSpaceing[10px];
+}
+.zs-highlight-box form li span input[type=text], .zs-highlight-box form li span textarea, .zs-highlight-box form li span select {
+    background: #FF6C6C;
+border: 1px solid #EC5252;
+color:$BodyHighlightBoxTextColor[#FFC2C2];
+}
+/* -------------------------------- THEME FORM AREA CSS -------------------------------- */
+form ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+}
+form li {
+    overflow: hidden;
+    padding: 8px 0;
+    margin: 0;
+}
+form ul li label, form ul li div {
+    width: auto;
+    float: left;
+}
+form ul li label {
+    width: 200px;
+}
+form li div span {
+    display: block;
+}
+form li span input, form li span label {
+    float: none;
+    width: auto;
+    margin:5px 3px 0;
+    font-weight: normal;
+    padding: 5px 3px;
+ #padding-top:1px;
+}
+form li span input[type=text], form li span textarea, form li span select {
+ font-family:$BodyFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+ font-size:$BodyFontSize[14px];
+ color:$BodyTextColor[#777777];
+    width: 280px;
+    background: #fcfbfb;
+    border: 1px solid #e7e6e6;
+    float: left;
+    padding: 6px;
+    resize: none;
+    margin: 0px;
+}
+form li span select {
+    width: 293px;
+}
+form li span textarea {
+    height: 80px;
+    overflow: auto;
+}
+form .dateinvoker {
+    background: url(images/datePickerIcn.png) 0 0 no-repeat;
+    width:16px;
+    height:15px;
+    border: none;
+    vertical-align: middle;
+    margin-top: 8px;
+    margin-left: 5px;
+    outline: none;
+    padding: 0px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+}
+form li input[type=submit], form li input[type=reset], button {
+ font-family:$BodyFontFamily['PT Sans', Verdana, Geneva, sans-serif];
+    font-size: 14px;
+    color: #000000;
+    border: 0 solid;
+    background: #FFD738;
+    padding: 5px 30px;
+    margin-right: 10px;
+    cursor: pointer;
+ #padding:3px 5px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+form li input[type=reset] {
+    background: #3e3e3e;
+    color: #ffffff;
+}
+/* ------------------------------------ THEME  SLIDESHOW  AREA CSS ------------------------------------------------*/
+.zs-slideshow-left-arrow {
+    background: url(images/zs-slideshow-left-arrow.png) left top no-repeat;
+    cursor: pointer;
+    height: 34px;
+    left: 20px;
+    margin-top: -17px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transition: opacity 500ms ease 0s;
+    -webkit-transition: opacity 500ms ease 0s;
+    -moz-transition: opacity 500ms ease 0s;
+    -o-transition: opacity 500ms ease 0s;
+    width: 34px;
+    z-index: 150;
+}
+.zs-slideshow-right-arrow {
+    background: url(images/zs-slideshow-right-arrow.png) left top no-repeat;
+    cursor: pointer;
+    height: 34px;
+    right: 20px;
+    margin-top: -17px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transition: opacity 500ms ease 0s;
+    -webkit-transition: opacity 500ms ease 0s;
+    -moz-transition: opacity 500ms ease 0s;
+    -o-transition: opacity 500ms ease 0s;
+    width: 34px;
+    z-index: 150;
+    left: auto;
+}
+.themeSlideshowOuterContainer {
+    bottom: 0;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 500ms ease 0s;
+    z-index: 150;
+}
+.themeSlideshowInnerContainer {
+    background: transparent;
+    border-radius: 0;
+    padding: 0px 20px 13px;
+    float: right;
+}
+.zs-slideshow-control-active {
+    background: url(images/zs-slideshow-control-active.png) no-repeat left top;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin: 0 0 0 5px;
+    width: 14px;
+}
+.zs-slideshow-control {
+    background: url(images/zs-slideshow-control.png) no-repeat left top;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin: 0 0 0 5px;
+    width: 14px;
+}
+/* ------------------------------------ text highlight CSS ------------------------------------------------*/
+.zs-text-light-color {
+color:$BodyTextLightColor[#BFBFBF]
+}
+.zs-text-highlight-color {
+color:$BodyTextHighlightColor[#ECC012]
+}
+.zs-highlight-box .zs-text-light-color {
+color:$BodyHighlightBoxTextLightColor[#BFBFBF]
+}
+.zs-highlight-box .zs-text-highlight-color {
+color:$BodyHighlightBoxTextHighlightColor[#FFF0B5]
+}
+/***************************** START: SOCIAL ICONS SPRITE *****************************/
+.themeSocialIconContainer {
+    float: left;
+    margin-top: 25px;
+}
+.zs-socialicon-email,.zs-socialicon-facebook,.zs-socialicon-flickr,.zs-socialicon-googleplus,.zs-socialicon-linkedin,.zs-socialicon-pinterest,.zs-socialicon-rss,.zs-socialicon-twitter,.zs-socialicon-youtube {
+    background:url('images/zs-socialicon-sprite.png') no-repeat top left; width:30px; height:30px; display: inline-block;
+    margin: 0;
+}
+.zs-socialicon-email {
+    background-position:0 -0px;
+}
+.zs-socialicon-facebook {
+    background-position:0 -30px;
+}
+.zs-socialicon-flickr {
+    background-position:0 -60px;
+}
+.zs-socialicon-googleplus {
+    background-position:0 -90px;
+}
+.zs-socialicon-linkedin {
+    background-position:0 -120px;
+}
+.zs-socialicon-pinterest {
+    background-position:0 -150px;
+}
+.zs-socialicon-rss {
+    background-position:0 -180px;
+}
+.zs-socialicon-twitter {
+    background-position:0 -210px;
+}
+.zs-socialicon-youtube {
+    background-position:0 -240px;
+}
+/*****************************   END: SOCIAL ICONS SPRITE *****************************/
+​
