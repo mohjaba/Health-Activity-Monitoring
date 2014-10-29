@@ -3,6 +3,9 @@ import pymongo
 from datetime import datetime
 
 class Game:
+	"""
+	  This is the class that updates the points of an area. Add more comments
+	"""
 	def __init__(self,area='State',name=None,points=0,tweets=None,lastTweetVal=None,lastIncrease=None,lastUpdate=None,totalTweets=None,motherState=None):
 		self.area         = area
 		self.name         = name
