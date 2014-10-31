@@ -1,9 +1,38 @@
+#####################################################################
+# file : game.py
+# author: Ioannis Paraskevakos
+# version : 0.1
+# date: October 2014
+# description:
+#####################################################################
 from __future__ import division
 import pymongo
-from datetime import datetime
+from datetime import date
 
 class Game:
-	def __init__(self,area='State',name=None,points=0,tweets=None,lastTweetVal=None,lastIncrease=None,lastUpdate=None,totalTweets=None,motherState=None):
+	
+	"""
+		Game Class. This class is used by the play module to update
+		the points of an area
+
+		Attributes:
+		area : The type of the area. It can be either State or County
+		name : The name of the Area
+		points : The Number of points that the area has
+		tweets : The number of unused tweets for this specific area from the last update
+		lastTweetVal : The number of Tweets that were used for the last update
+		lastUpdate : This is the date of the last update with tweets.
+		totalTweets : The total number of tweets
+		motherState : In case of a County in which State it belongs
+
+		__init__() : Class Constractor
+		__get__() : returns the value of an attribute
+		__set__() : Sets an attribute
+		NewPoints : The basic point update method.
+	"""
+
+	def __init__(self,area='state',name=None,points=0,tweets=None,lastTweetVal=None,lastUpdate=None,totalTweets=None,motherState=None):
+		"""Class Constructor. The constructor initializes the classes attributes."""
 		self.area         = area
 		self.name         = name
 		self.points       = points
@@ -14,6 +43,9 @@ class Game:
 		self.motherState  = motherState
 
 	def __get__(self, attr='name'):
+		"""
+		Return the attribute based on the name of the attribute
+		"""
 		if attr == 'area':
 			return self.area
   		elif attr == 'name':
@@ -34,6 +66,9 @@ class Game:
 			return 0
 
 	def __set__(self, attr,val):
+		"""
+		Set the value of an attribute based on it name with val
+		"""
 		if attr == 'area':
 			self.area = val
 			return 1
@@ -64,41 +99,67 @@ class Game:
 
 	def NewPoints(self):
 		
-		TimeNow = datetime.now()
-		TimeDelta = TimeNow - self.lastUpdate
+		"""
+		The basic point update method. It updates the points of an area
+		based on how often it is updated, when tweets from that area are
+		retrieved, what impact those new tweets have in the total
+		number of tweets from that area and what is the difference from
+		the last update.
+		
+		"""
+
+		TimeNow = date.today() #Get today's date
+		TimeDelta = TimeNow - self.lastUpdate # Calculate the difference from last update
 		LastTweetCount = self.lastTweetVal
 		NewTweetCount = self.tweets
-		Update = 0
-		if (TimeDelta.days > 7 and self.tweets == 0 and self.totalTweets != 0):
+		Update = 0 # Indicates whether an update should happen or not.
+			   # Value 0 no update, 1 update everything, 2 update only points
+
+
+		if (TimeDelta.days > 7 and self.tweets == 0 and self.totalTweets != 0 and self.points > 0):
+			#If there is no new tweets for a week subtract 10 points and keep last update's
+			# date and last tweet count
 			EarnedPoints = -10
-			Update = 1
-			self.set('lastUpdate',TimeNow)
+			Update = 2
 		else:
+			# At the beginning consider the points to be as many as the new tweets minus the old
+			# This way the game system is just, less tweets from last time means loss of points
 			EarnedPoints = NewTweetCount - LastTweetCount
 			if(EarnedPoints > 0 and NewTweetCount/LastTweetCount >= 1.5 and NewTweetCount/self.totalTweets > 0.1):
+				# More than 50% extra tweets and mre than the 10% of all tweets 10 extra points
 				EarnedPoints = EarnedPoints + 10
 				Update = 1
-			elif (EarnedPoints > 0 and NewTweetCount/LastTweetCount >= 1.5 and NewTweetCount/self.totalTweets <= 0.1):
+			elif (EarnedPoints >= 0 and NewTweetCount/LastTweetCount >= 1.5 and NewTweetCount/self.totalTweets <= 0.1):
+				# More than 50% extra tweets and less than the 10% of all tweets 5 extra points
 				EarnedPoints = EarnedPoints + 5
 				Update = 1
-			elif (EarnedPoints > 0 and NewTweetCount/LastTweetCount < 1.5 and NewTweetCount/self.totalTweets > 0.1):
+			elif (EarnedPoints >= 0 and NewTweetCount/LastTweetCount < 1.5 and NewTweetCount/self.totalTweets > 0.1):
+				# Less than 50% extra tweets and mre than the 10% of all tweets 5 extra points
 				EarnedPoints = EarnedPoints + 5
 				Update = 1
-			elif (EarnedPoints > 0 and NewTweetCount/LastTweetCount < 1.5 and NewTweetCount/self.totalTweets <= 0.1):
+			elif (EarnedPoints >= 0 and NewTweetCount/LastTweetCount < 1.5 and NewTweetCount/self.totalTweets <= 0.1):
+				# Less than 50% extra tweets and less than the 10% of all tweets 0 extra points
 				Update = 1
 			elif (EarnedPoints < 0 and NewTweetCount/LastTweetCount >= 0.5 and NewTweetCount/self.totalTweets > 0.1):
+				# Less absolute value and more than 50% tweets and mre than the 10% of all tweets half points
 				EarnedPoints = 0.5*EarnedPoints
 				Update = 1
 			elif (EarnedPoints < 0 and NewTweetCount/LastTweetCount < 0.5 and NewTweetCount/self.totalTweets > 0.1):
+				# Less absolute value and less than 50% tweets and m0re than the 10% of all tweets three quarters points		
 				EarnedPoints = 0.75*EarnedPoints
 				Update = 1
 			else:
+				# Whatever is at the beginning
 				Update = 1
 
-		if (Update):
+		if (Update == 1):
+			#Update everything
 			self.points = self.points+EarnedPoints
 			self.lastTweetVal = NewTweetCount
 			self.totalTweets = self.totalTweets + NewTweetCount
 			self.lastUpdate = TimeNow
-
+		elif (Update == 2):
+			#Update points
+			self.points = self.points+EarnedPoints
 		
+
