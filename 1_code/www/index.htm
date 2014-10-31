@@ -1,5 +1,34 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="generator" content="Zoho Sites 1.0, http://zoho.com/sites"><title>Health Monitoring Analytics - Home</title><meta property="og:title" content="Health Monitoring Analytics - Home"><meta property="og:url" content="home.htm"><meta property="og:description" content=""><link href="Home_files/content_style.css" rel="stylesheet" type="text/css"><link href="Home_files/style.css" rel="stylesheet" type="text/css"><link href="Home_files/contentreset_style.css" type="text/css" rel="stylesheet"> <link rel="stylesheet" href="Home_files/webfonts.css" type="text/css"><script>var ZS_ColumnFix=false;var ZS_FormAppName="health-monitoring-analytics-42884795"</script><!--[if gt IE 8]><script>ZS_ColumnFix=true</script><script src="/js/json2.js"></script><![endif]--><script src="Home_files/commonUtils.js"></script><script src="Home_files/bootstrap.js"></script><script src="Home_files/navigation.js"></script><script>var ZS_adjustHeight=false;var ZS_PublishMode = true; var ZS_MobileVer = false;</script><script src="Home_files/animation.js"></script><script src="Home_files/audio.js"></script><script src="Home_files/in.js"></script><script src="Home_files/jquery.js"></script><script src="Home_files/form.js"></script><script src="Home_files/generatejs.js"></script><script src="Home_files/searchableInput.js"></script><script src="Home_files/app.js"></script><script src="Home_files/form-renderer.js"></script><script src="Home_files/formSubmitJs.js"></script></head><body>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="generator" content="Zoho Sites 1.0, http://zoho.com/sites"><title>Health Monitoring Analytics - Home</title><meta property="og:title" content="Health Monitoring Analytics - Home"><meta property="og:url" content="home.htm"><meta property="og:description" content=""><link href="Home_files/content_style.css" rel="stylesheet" type="text/css"><link href="Home_files/style.css" rel="stylesheet" type="text/css"><link href="Home_files/contentreset_style.css" type="text/css" rel="stylesheet"> <link rel="stylesheet" href="Home_files/webfonts.css" type="text/css"><script>var ZS_ColumnFix=false;var ZS_FormAppName="health-monitoring-analytics-42884795"</script><!--[if gt IE 8]><script>ZS_ColumnFix=true</script><script src="/js/json2.js"></script><![endif]--><script src="Home_files/commonUtils.js"></script><script src="Home_files/bootstrap.js"></script><script src="Home_files/navigation.js"></script><script>var ZS_adjustHeight=false;var ZS_PublishMode = true; var ZS_MobileVer = false;</script><script src="Home_files/animation.js"></script><script src="Home_files/audio.js"></script><script src="Home_files/in.js"></script><script src="Home_files/jquery.js"></script><script src="Home_files/form.js"></script><script src="Home_files/generatejs.js"></script><script src="Home_files/searchableInput.js"></script><script src="Home_files/app.js"></script><script src="Home_files/form-renderer.js"></script><script src="Home_files/formSubmitJs.js"></script>
+
+
+<!******ADDED SCRIPT FILES******************************>
+<style type="text/css">
+  html { width: 100%; height: 100% }
+  body { width: 100%; height: 100% }
+  #map_canvas { width: 100%; height: 100% }
+
+#panel {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+</style>
+
+
+
+
+    	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
+
+	<script type = "text/javascript" src = "PerCapitaJavaScript.js"></script>
+<!******END OF ADDED SCRIPT FILES***********************>
+
+</head><body>
 <div class="themeWidth">
   <div class="themeSocialIconAndSearchBoxContainer"> 
      </div>
@@ -47,13 +76,40 @@
             <div id="elm_9RDj9vIsQWGN7Pj636jTOg" class="zpelement-wrapper zpcol-layout">
             <div class="zpcolumns">
                     <div class="zpflLeft zpcolumn" style="width:70%">
-                    <div id="pos_uy8H0v7eRcmaZ17w2DdTGQ" class="zpwrapper col-space"><div style="height:1px;">&nbsp;</div>
+                    <div id="pos_uy8H0v7eRcmaZ17w2DdTGQ" class="zpwrapper col-space"><div style="height:450px;">&nbsp;
+
+<!********************CODE THAT I ADDED*********************************************************>
+
+	 <h1> Per Capita Heat Map </h1> 
+    <div id="map_canvas"></div>
+
+
+		<h2> Map Type </h2>
+		<label><input type = "radio" name = "MapType"  id="heatmap" value="heatmap" checked="checked" onclick="ChooseRegHeatMap()"> Heatmap </label><br />
+		<label><input type = "radio" name = "MapType"  id="percapitaheatmap" value="percapitaheatmap" onclick="ChoosePerCapitaHeatMap()"> PerCapitaHeatMap </label><br />
+
+
+
+<!************************END OF CODE I ADDED****************************************************>
+
+
+
+
+</div>
 
             <div id="elm_zhmP-kVORGqcopAGwx31Iw" class="zpelement-wrapper image" name="image">
                 <div class="zpAlignPos" style="float:left;text-align:center;;margin-bottom:2px;">
-                <img class="zpImage" src="Home_files/map1.png" style="border:0px solid;border-color:initial;width: 652px;margin-right:10px;padding:0px;background:transparent; 
+
+
+
+<!*******************THE CODE BELOW WAS "SHUT OFF" BY INSERTING THE EXCLAMATION*****************>
+
+                <!img class="zpImage" src="Home_files/map1.png" style="border:0px solid;border-color:initial;width: 652px;margin-right:10px;padding:0px;background:transparent; 
                     cursor:pointer;" onclick="lightBox(this)
                 ">
+<!*******************END OF "SHUT OFF"************************************************************>
+
+
                 <div class="zpImageCaption" style="text-align:center; width: 652px;margin:0px auto;"></div></div>
             </div>
                     </div></div> 
