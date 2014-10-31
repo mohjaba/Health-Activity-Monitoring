@@ -6,12 +6,30 @@
 # description: Unit test of class Game
 #####################################################################
 from __future__ import division
+import flask
+import pip
 import pymongo
 from datetime import date
 from game import Game
 
 class gameTest:
-	lastUpdate = date.today(); #Get today's date
+	"""
+	This is the unit test class of the Game class defined in the game.py
+	file.
+	
+	Methods:
+		testget : Test that the attributes of the Game object are the same
+			  as those in the class construction
+		
+		testPointsIncrease : Test the NewPoints method if it can increase
+			the points of the area and return the correct result.
+
+		testPointsDateDecrease : Test if points of an area decrease if the
+			area is not updated for more than a week
+
+	"""
+
+	lastUpdate = date.today();
 	AreaTest = Game('County','Essex',249,500,150,lastUpdate,15000,'NJ')
 	AttrVal = ['County','Essex',249,500,150,lastUpdate,15000,'NJ']
 	
@@ -32,11 +50,12 @@ class gameTest:
 	def testPointsDateDecrease(self):
 		newlastupdate = date(2014,10,16)
 		self.AreaTest.__set__('lastUpdate',newlastupdate)
+		self.AreaTest.__set__('tweets',0)
 		self.AreaTest.NewPoints()
 		if(self.AreaTest.__get__('points') == 594):
 			print 'Point Decrease Due to date Success'
 		else:
-			print 'Point Decrease Due to date Success'
+			print 'Point Decrease Due to date Failed'
 
 
 if __name__ == "__main__":
