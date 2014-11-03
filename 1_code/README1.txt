@@ -34,3 +34,5 @@ execute ‘twitter_stream.py’ ($ python twitter_stream.py)
 execute ‘data.py’ ($ python data.py)
 open the map.html (write in the web browser address: localhost:5000/map.html). You have to be connected to the Internet during the execution time.
 A google map will be shown in the page and the data will be appear on the map gradually. 
+
+3) game.py contains the class for playing the game.
