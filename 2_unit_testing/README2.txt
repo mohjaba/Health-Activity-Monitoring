@@ -62,4 +62,5 @@
   In conclusion, we can conclude the per capita weighted data to allow us to compare characteristics of the populations of 
   different areas, regardless of the size differences between them.
   
-  
+  2) To run the unit test of the Game, first copy the game.py file from the code/game to the same folder as gameTest.py and 
+  type: python gameTest.py
