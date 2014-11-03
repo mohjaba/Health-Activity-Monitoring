@@ -10,3 +10,27 @@
   pip install Counters
   Then, simply the code could be compiled using the following command:
   python CalorieMeter.py
+  
+3)To implement the interactive map you have to follow these steps:
+
+A)to make this code work, first, you have to install the following software:
+
+Python   (www.python.org)
+MongoDB  (www.mongodb.org)
+redis server (www.redis.io)
+Flask (flask.pocoo.org)
+Tweepy (www.tweepy.org)
+
+B)Then you have to make this configuration:
+
+Twitter Streaming API credentials (you have to register at twitter development website dev.twitter.com)
+create a capped collection in MongoDB named "tweets" using the following query: db.createCollection("log", { capped : true, size : 5242880, max : 5000 })
+
+c)Now, follow these steps to make it work (bash commands in the parenthesis):
+
+start MongoDB ($ mongod).
+start Redis server ($ redis-server).
+execute ‘twitter_stream.py’ ($ python twitter_stream.py)
+execute ‘data.py’ ($ python data.py)
+open the map.html (write in the web browser address: localhost:5000/map.html). You have to be connected to the Internet during the execution time.
+A google map will be shown in the page and the data will be appear on the map gradually. 
