@@ -1,10 +1,3 @@
-#####################################################################
-# file : game.py
-# author: Ioannis Paraskevakos
-# version : 0.1
-# date: October 2014
-# description:
-#####################################################################
 from __future__ import division
 import pymongo
 from datetime import date
