@@ -1,10 +1,3 @@
-#####################################################################
-# file : Play.py
-# author: Ioannis Paraskevakos
-# version : 0.1
-# date: October 2014
-# description:
-#####################################################################
 from __future__ import division
 from pymongo import MongoClient
 from datetime import date
