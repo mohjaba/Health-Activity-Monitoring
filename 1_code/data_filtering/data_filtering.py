@@ -18,8 +18,10 @@ def locator(tweets,hastable):
 
   loc_tweets=list()
   for tweet in tweets:
+    #Uncomment this line in case a tweet outside the US passes to find its id
+    # and check its location value
     #print tweet['_id']
-    if tweet['geo'] != None:
+    if tweet['geo'] != None and tweet['place'] != None and tweet['place']['country_code'] == 'US':
       finalGeoLat = tweet['geo']['coordinates'][0]
       finalGeoLog = tweet['geo']['coordinates'][1]
       temp_tweet = {'_id':tweet['_id'],'finalGeoLat':finalGeoLat,'finalGeoLog':finalGeoLog,
@@ -138,6 +140,7 @@ def data_filtering():
   for tweet in tweets_final:
     client.twiter_data.clean_tweets.update({'_id':tweet['_id']},tweet,True) #Target
 
+  client.twiter_data.twitter_coll.drop()
   client.close()
   return True
 
