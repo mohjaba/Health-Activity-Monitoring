@@ -1,5 +1,44 @@
 from pymongo import MongoClient
+from hashtable import hashtable
 
+def locator(tweets,hastable):
+  '''
+  This function checks all tweets and returns only those that are geotagged and
+  located in the US or the uses the location of the user to decide the
+  coordinates of a tweet.
+
+  Arguments:
+    tweets : A list of tweets that will be selected by their location
+
+    hashtable : A hashtable containing names of areas and their coordinates
+
+  Output:
+    loc_tweets : Tweets with coordinates
+  '''
+
+  loc_tweets=list()
+  for tweet in tweets:
+    #print tweet['_id']
+    if tweet['geo'] != None:
+      finalGeoLat = tweet['geo']['coordinates'][0]
+      finalGeoLog = tweet['geo']['coordinates'][1]
+      temp_tweet = {'_id':tweet['_id'],'finalGeoLat':finalGeoLat,'finalGeoLog':finalGeoLog,
+               'lang':tweet['lang'],'text':tweet['text'],'place':tweet['place'],
+               'user':tweet['user']}
+      loc_tweets.append(temp_tweet)
+      #append tweet
+    else:
+      for place in hashtable:
+        if tweet['user']['location']==place['name']:
+          finalGeoLat = place['lat']
+          finalGeoLog = place['long']
+          temp_tweet = {'_id':tweet['_id'],'finalGeoLat':finalGeoLat,'finalGeoLog':finalGeoLog,
+               'lang':tweet['lang'],'text':tweet['text'],'place':place['name'],
+               'user':tweet['user']}
+          loc_tweets.append(temp_tweet)
+          #append tweet
+
+  return loc_tweets
 
 def data_filter2 (keywords, Tweets):
   '''
@@ -66,6 +105,11 @@ def data_filter3(keywords,Tweets):
 
 def data_filtering():
   '''
+  This function creates the filtering of the tweets. It has no attributes. 
+  It automatically connects to the MongoDB database, fetches all the tweets from
+  the United States and then filters them with the keywords that are in the txt
+  files keywords1.txt,keywords2.txt and keywords3.txt
+
   '''
 
   fpK1 = open('keywords1.txt','r')
@@ -85,21 +129,20 @@ def data_filtering():
   # suffix
   client = MongoClient('mongodb://localhost:27017')
 
-  RawTweets = client.twiter_data.twitter_coll.find({'place':{"$type":3}})
+  RawTweets = client.twiter_data.twitter_coll.find()
 
-  usable_tweet = list()
-  for tweet in RawTweets:
-    if tweet['place']['country_code']=='US':
-      usable_tweet.append(tweet)
-
+  usable_tweet = locator(RawTweets,hashtable)
   tweets_f1 = data_filter2 (keywords2, usable_tweet)
   tweets_final = data_filter3(keywords3,tweets_f1)
 
-  for tweets in tweets_final:
-    Tweets2 = {'_id':tweets['_id'],'coordinates':tweets['coordinates'],
-               'lang':tweets['lang'],'text':tweets['text'],'place':tweets['place'],
-               'user':tweets['user']}
-    client.twiter_data.clean_tweets.update({'_id':Tweets2['_id']},Tweets2,True) #Target
+  for tweet in tweets_final:
+    client.twiter_data.clean_tweets.update({'_id':tweet['_id']},tweet,True) #Target
 
   client.close()
   return True
+
+if __name__ == "__main__":
+  '''
+    Just run the above functions
+  '''
+  data_filtering()
