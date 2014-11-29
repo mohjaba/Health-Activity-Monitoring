@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from hashtable import hashtable
 
-def locator(tweets,hastable):
+def locator(tweets,hashtable):
   '''
   This function checks all tweets and returns only those that are geotagged and
   located in the US or the uses the location of the user to decide the
