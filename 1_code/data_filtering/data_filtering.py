@@ -110,18 +110,15 @@ def data_filtering():
   This function creates the filtering of the tweets. It has no attributes. 
   It automatically connects to the MongoDB database, fetches all the tweets from
   the United States and then filters them with the keywords that are in the txt
-  files keywords1.txt,keywords2.txt and keywords3.txt
+  files keywords2.txt and keywords3.txt
 
   '''
-
-  fpK1 = open('keywords1.txt','r')
+  
   fpK2 = open('keywords2.txt','r')
   fpK3 = open('keywords3.txt','r')
 
-  keywords1 = [line.strip() for line in fpK1]
   keywords2 = [line.strip() for line in fpK2]
   keywords3 = [line.strip() for line in fpK3]
-  fpK1.close()
   fpK2.close()
   fpK3.close()
 
