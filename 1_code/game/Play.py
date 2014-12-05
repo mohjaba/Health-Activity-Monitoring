@@ -12,20 +12,22 @@ class Play:
 	** *Attributes* **
 	   mongoclient   : This is the actual connection with the MongoDB
 	   CollState     : This is the connection with the Collection that
-                           holds the data for the Game over the States.
-           CollTwets     : This is the connection with the Collection that 
-                           holds the data from the tweets pulled from Twitter
-           TweetedStates : This attribute has a list of the states mentioned
-                                in the Tweets
+                       holds the data for the Game over the States.
+       CollTwets     : This is the connection with the Collection that 
+                       holds the data from the tweets pulled from Twitter
+       TweetedStates : This attribute has a list of the states mentioned
+                       in the Tweets
+       TweetedCities : This attribute has a list of the states mentioned
+                       in the Tweets
 
         ** *Methods* **
            __init__ : The constructor of the class must be present for
-                            python classes.
+                      python classes.
 
            grab_tweets  : This method is to utilize the existing connection
-                                 with the database and get the needed data
+                          with the database and get the needed data
 
-           update_area : This method is used to call the game class and update
+           update_areas : This method is used to call the game class and update
                          the database entry for that specific area.
 	"""
 	def __init__(self):
@@ -33,55 +35,96 @@ class Play:
 		Class Constructor
 		"""
 		self.mongoclient = MongoClient('mongodb://localhost:27017') # Creates aa connection to MongoDB
-		self.CollState = client.search_results.States #Get State collection from search_results database
-		self.CollTweets = client.search_results.raw_data #Get raw_data collection from search_results database
-		self.TweetedStates = None
+		self.CollState = self.mongoclient.search_results.States #Get State collection from search_results database
+		self.CollTweets = self.mongoclient.twiter_data.clean_tweets #Get raw_data collection from search_results database
+		self.TweetedStates = dict()
+		self.TweetedCities = dict()
 
 	def grab_tweets(self):
-		Tweets = self.CollTweets.find({'place':{"$type":3}}) # Find the tweet that have geo coordinates for the moment.
-		for i in range(Tweets.count()):
-			tweet = Tweets[i] # Get tweet. This is a dictionary
-			place = tweet['place']# also a dictionary
-			name = place['full_name']
-			state = name[-2:]
+		Tweets = self.CollTweets.find() # Find the tweet that have geo coordinates for the moment.
+		for tweet in Tweets:
+			place = tweet['place']
+			country = tweet['country']
+			state = place[-2:]
 			#If the states is already found increment the number of tweets
 			#for this state else put 1 since this is the first tweet
-			if (self.TweetedStates.__contains__(state) and name['country_code']=='US'):
+			if (self.TweetedStates.__contains__(state) and country=='US' and state!='US'):
 				self.TweetedStates[state] = self.TweetedStates[state]+1
-			else:
+			elif (state!='US'):
 				self.TweetedStates[state] = 1
+			if (self.TweetedCities.__contains__(place) and country=='US' and state!='US'):
+				self.TweetedCities[place] = self.TweetedCities[place]+1
+			elif (state!='US'):
+				self.TweetedCities[place] = 1
 
 
-	def update_area(self,tweets,area,name,motherstate=None):
-		if (area == 'state'):
-                        # Query the database for the state with id its name.
-			AreaEntry = self.CollState.find_one({'_id':name})
-		elif (area == 'county'):
-                        # Query the database for the state with id the motherstate
-                        # By taking the name field the proper collection for the
-			# the county leaderboard is selected.
-			state = self.CollState.find_one({'_id':,motherstate})
-			CollCounty = db[state['name']]
-			AreaEntry = collCounty.find_one('name':name)
+	def update_areas(self):
+		'''
+		This method is responsible to go through the two area dictionaries,
+		create a Game object of the Game Class for a given area and run the
+		game.
 
-		#Grad the date of the last update, create an object of the Game
-		#class and call the method for the new points
-		lastdate = date(AreaEntry['lastUpdate'][0],AreaEntry['lastUpdate'][1],AreaEntry['lastUpdate'][2]) #extract last update date
-		GamingArea = Game(area,AreaEntry['name'],AreaEntry['points'],tweets,AreaEntry['lastTweettVal'],lastdate,AreaEntry['totalTweets'])
-		GamingArea.NewPoints()
+		At the end it should update the database for that area.
+		'''
 
-		#Change the values of the database entry based on the decisions
-		#made by the Game class object
-		AreaEntry['points']=GamingArea.__get__('points')
-		AreaEntry['lastTweetVal'] = GamingArea.__get__('lastTweetVal')
-		AreaEntry['lastUpdate'] = GamingArea.__get__('lastUpdate')
-		AreaEntry['totalTweets'] = GamingArea.__get__('totalTweets')
+		#First update States
+		for state in self.TweetedStates:
+			print state
+            # Query the database for the state with id its name.
+			AreaEntry = self.CollState.find_one({'_id':state})
+			#Grad the date of the last update, create an object of the Game
+			#class and call the method for the new points
+			lastdate = date(AreaEntry['lastUpdate'][0],AreaEntry['lastUpdate'][1],AreaEntry['lastUpdate'][2]) #extract last update date
+			GamingArea = Game('state',AreaEntry['name'],AreaEntry['points'],self.TweetedStates[state],AreaEntry['lastTweetVal'],
+				lastdate,AreaEntry['totalTweets'])
+			GamingArea.NewPoints()
+			#Change the values of the database entry based on the decisions
+			#made by the Game class object
+			AreaEntry['points']=GamingArea.__get__('points')
+			AreaEntry['lastTweetVal'] = GamingArea.__get__('lastTweetVal')
+			AreaEntry['lastUpdate'] = GamingArea.__get__('lastUpdate')
+			AreaEntry['totalTweets'] = GamingArea.__get__('totalTweets')
+			self.CollState.update({'_id':AreaEntry['_id']},AreaEntry,True)
 
-		#Update the entry in the correct collection for the state or the county.
-		if area == 'state':
-			CollState.update({'_id':AreaEntry['_id']},AreaEntry,True)
-		elif area == 'county':
-			CollCounty.update({'_id':AreaEntry['_id']},AreaENtry,True)
+		for city in self.TweetedCities:
+			motherstate = city[-2:]
+			name = city[0:-4]
+            # Query the database for the state with id the motherstate
+            # By taking the name field the proper collection for the
+			# the City leaderboard is selected.
+			state = self.CollState.find_one({'_id':motherstate})
+			CollCity = self.mongoclient.search_results[motherstate]
+			AreaEntry = CollCity.find_one({'name':name})
+			if not AreaEntry:
+				AreaEntry = dict()
+				AreaEntry['_id']=''
+				AreaEntry['area'] = 'city'
+				AreaEntry['name'] = name
+				AreaEntry['points'] = 0
+				AreaEntry['lastTweetVal'] = 0
+				AreaEntry['lastUpdate'] = [date.today().year,date.today().month,date.today().day]
+				AreaEntry['totalTweets'] = 0
+				AreaEntry['motherState'] = motherstate
+				
+			#Grad the date of the last update, create an object of the Game
+			#class and call the method for the new points
+			lastdate = date(AreaEntry['lastUpdate'][0],AreaEntry['lastUpdate'][1],AreaEntry['lastUpdate'][2]) #extract last update date
+			GamingArea = Game('city',AreaEntry['name'],AreaEntry['points'],self.TweetedCities[city],AreaEntry['lastTweetVal'],lastdate,AreaEntry['totalTweets'],motherstate)
+
+			GamingArea.NewPoints()
+			#Change the values of the database entry based on the decisions
+			#made by the Game class object
+			AreaEntry['points']=GamingArea.__get__('points')
+			AreaEntry['lastTweetVal'] = GamingArea.__get__('lastTweetVal')
+			AreaEntry['lastUpdate'] = GamingArea.__get__('lastUpdate')
+			AreaEntry['totalTweets'] = GamingArea.__get__('totalTweets')
+			CollCity.update({'_id':AreaEntry['_id']},AreaEntry,True)
 
 	
+if __name__ == '__main__':
+	
+	print "Starting Game Phase"
 
+	Session = Play()
+	Session.grab_tweets()
+	Session.update_areas()
