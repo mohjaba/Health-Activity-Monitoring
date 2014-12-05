@@ -61,7 +61,7 @@ function PushGeoData(geoData)
       
 		heatmap = new google.maps.visualization.HeatmapLayer({
 		data: HeatMapData,
-		radius:15
+		radius:30
 
 		});
 		heatmap.setMap(map);
