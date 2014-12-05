@@ -1,10 +1,3 @@
-#####################################################################
-# file : game.py
-# author: Ioannis Paraskevakos
-# version : 0.1
-# date: October 2014
-# description:
-#####################################################################
 from __future__ import division
 import pymongo
 from datetime import date
@@ -16,7 +9,7 @@ class Game:
 		the points of an area
 
 		Attributes:
-		area : The type of the area. It can be either State or County
+		area : The type of the area. It can be either State or City
 		name : The name of the Area
 		points : The Number of points that the area has
 		tweets : The number of unused tweets for this specific area from the last update
@@ -125,7 +118,11 @@ class Game:
 			# At the beginning consider the points to be as many as the new tweets minus the old
 			# This way the game system is just, less tweets from last time means loss of points
 			EarnedPoints = NewTweetCount - LastTweetCount
-			if(EarnedPoints > 0 and NewTweetCount/LastTweetCount >= 1.5 and NewTweetCount/self.totalTweets > 0.1):
+			if(self.totalTweets == 0):
+				# First Time playing the game! Bonus 20 points
+				EarnedPoints = EarnedPoints + 20
+				Update = 1
+			elif(EarnedPoints >= 0 and NewTweetCount/LastTweetCount >= 1.5 and NewTweetCount/self.totalTweets > 0.1):
 				# More than 50% extra tweets and mre than the 10% of all tweets 10 extra points
 				EarnedPoints = EarnedPoints + 10
 				Update = 1
@@ -157,7 +154,7 @@ class Game:
 			self.points = self.points+EarnedPoints
 			self.lastTweetVal = NewTweetCount
 			self.totalTweets = self.totalTweets + NewTweetCount
-			self.lastUpdate = TimeNow
+			self.lastUpdate = [TimeNow.year,TimeNow.month,TimeNow.day]
 		elif (Update == 2):
 			#Update points
 			self.points = self.points+EarnedPoints

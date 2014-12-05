@@ -1,10 +1,3 @@
-#####################################################################
-# file : gameTest.py
-# author: Ioannis Paraskevakos
-# version : 0.1
-# date: October 2014
-# description: Unit test of class Game
-#####################################################################
 from __future__ import division
 import flask
 import pip
