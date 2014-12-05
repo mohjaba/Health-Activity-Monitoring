@@ -75,3 +75,26 @@ for label, data in (('Word', words),
     [ pt.add_row(kv) for kv in c.most_common()[:10] ]
     pt.align[label], pt.align['Count'] = 'l', 'r' # Set column alignment
     print pt
+	####
+str1= "calories";		
+jwdah = 0.0;
+for t in status_texts:
+	print str(t);	
+	#print str(t).find(str1);
+	ghas= str(t).find(str1);
+	bati=ghas-5;
+	farouq=str(t)[bati:ghas];
+	print farouq
+	#print farouq[0]
+	import re
+	if farouq[0] == " " or farouq[0] == "0" or farouq[0] == "1" or farouq[0] == "2" or farouq[0] == "3" or farouq[0] == "4" or farouq[0] == "5" or farouq[0] == "6" or farouq[0] == "7" or farouq[0] == "8" or farouq[0] == "9":
+		jwdah = jwdah + float(str(t)[bati:ghas]);
+		print jwdah
+	elif farouq[0] == ",":
+		jwdah = jwdah + float(str(t)[bati+1:ghas])+1000;
+		print jwdah
+	elif farouq[0] == ".":
+		jwdah = jwdah + float(str(t)[bati+2:ghas]);
+		print jwdah
+#
+print jwdah;
