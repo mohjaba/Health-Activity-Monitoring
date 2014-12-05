@@ -24,8 +24,10 @@
 
 
     	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
+			<script type = "text/javascript" src = "RandomDataForUnitTest.js"></script>
+	<script type = "text/javascript" src = "PerCapitaHeatMap.js"></script>
 
-	<script type = "text/javascript" src = "PerCapitaJavaScript.js"></script>
+
 <!******END OF ADDED SCRIPT FILES***********************>
 
 </head><body>
@@ -85,8 +87,8 @@
 
 
 		<h2> Map Type </h2>
-		<label><input type = "radio" name = "MapType"  id="heatmap" value="heatmap" checked="checked" onclick="ChooseRegHeatMap()"> Heatmap </label><br />
-		<label><input type = "radio" name = "MapType"  id="percapitaheatmap" value="percapitaheatmap" onclick="ChoosePerCapitaHeatMap()"> PerCapitaHeatMap </label><br />
+		<label><input type = "radio" name = "MapType"  id="heatmap" value="heatmap" onclick="ChooseRegular()"> Regular Heatmap </label><br />
+		<label><input type = "radio" name = "MapType"  id="percapitaheatmap" value="percapitaheatmap" onclick="ChooseWeighted()"> PerCapita HeatMap </label><br />
 
 
 
