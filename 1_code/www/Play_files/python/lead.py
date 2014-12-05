@@ -6,7 +6,7 @@ def get_name_lead():
 	CollState = mongoclient.search_results.States.find().sort('points')
 	StateLeadName = list()
 	for i in range(0,10):
-		StateLeadName.append(CollState[49-i]['name'])
+		StateLeadName.append(CollState[50-i]['name'])
 	
 	return StateLeadName
 
@@ -16,7 +16,7 @@ def get_point_lead():
 	CollState = mongoclient.search_results.States.find().sort('points')
 	StateLeadPoints = list()
 	for i in range(0,10):
-		StateLeadPoints.append(CollState[49-i]['points'])
+		StateLeadPoints.append(CollState[50-i]['points'])
 	
 	return StateLeadPoints
 
