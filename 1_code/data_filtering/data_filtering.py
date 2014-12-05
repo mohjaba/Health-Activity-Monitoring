@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 from hashtable import hashtable
+from statehash import StateHash
 
 def locator(tweets,hashtable):
   '''
@@ -24,9 +25,11 @@ def locator(tweets,hashtable):
     if tweet['geo'] != None and tweet['place'] != None and tweet['place']['country_code'] == 'US':
       finalGeoLat = tweet['geo']['coordinates'][0]
       finalGeoLog = tweet['geo']['coordinates'][1]
-      temp_tweet = {'_id':tweet['_id'],'finalGeoLat':finalGeoLat,'finalGeoLog':finalGeoLog,
-               'lang':tweet['lang'],'text':tweet['text'],'place':tweet['place'],
-               'user':tweet['user']}
+      temp_tweet = {'_id':tweet['_id'],'coordinates':[finalGeoLat,finalGeoLog],
+               'lang':tweet['lang'],'text':tweet['text'],
+               'place':tweet['place']['full_name'],
+               'country':tweet['place']['country_code'],
+               'user':tweet['user'],'timestamp_ms':tweet['timestamp_ms']}
       loc_tweets.append(temp_tweet)
       #append tweet
     else:
@@ -34,9 +37,26 @@ def locator(tweets,hashtable):
         if tweet['user']['location']==place['name']:
           finalGeoLat = place['lat']
           finalGeoLog = place['long']
-          temp_tweet = {'_id':tweet['_id'],'finalGeoLat':finalGeoLat,'finalGeoLog':finalGeoLog,
-               'lang':tweet['lang'],'text':tweet['text'],'place':place['name'],
-               'user':tweet['user']}
+          placed = False
+          index = 0
+          while not placed and index<50:
+            #print index
+            state = StateHash[index]
+            comma = place['name'].find(',')
+            tempstate = place['name'][comma+2:]
+            if tempstate.__len__() > 3 and tempstate in state['name']:
+              part = place['name'].partition(',')
+              new_place = part[0]
+              new_place=new_place+', '+state['_id']
+              placed = True
+            if not placed:
+              new_place = place['name']
+            index=index+1
+          temp_tweet = {'_id':tweet['_id'],'coordinates':[finalGeoLat,finalGeoLog],
+               'lang':tweet['lang'],'text':tweet['text'],
+               'place':new_place,
+               'country':'US',
+               'user':tweet['user'],'timestamp_ms':tweet['timestamp_ms']}
           loc_tweets.append(temp_tweet)
           #append tweet
 
@@ -110,15 +130,18 @@ def data_filtering():
   This function creates the filtering of the tweets. It has no attributes. 
   It automatically connects to the MongoDB database, fetches all the tweets from
   the United States and then filters them with the keywords that are in the txt
-  files keywords2.txt and keywords3.txt
+  files keywords1.txt,keywords2.txt and keywords3.txt
 
   '''
-  
+
+
   fpK2 = open('keywords2.txt','r')
   fpK3 = open('keywords3.txt','r')
 
+
   keywords2 = [line.strip() for line in fpK2]
   keywords3 = [line.strip() for line in fpK3]
+
   fpK2.close()
   fpK3.close()
 
@@ -138,6 +161,7 @@ def data_filtering():
     client.twiter_data.clean_tweets.update({'_id':tweet['_id']},tweet,True) #Target
 
   client.twiter_data.twitter_coll.drop()
+
   client.close()
   return True
 
@@ -146,3 +170,4 @@ if __name__ == "__main__":
     Just run the above functions
   '''
   data_filtering()
+
