@@ -1,6 +1,6 @@
 <?php
 	function GetLead($State){
-		exec("python ./python/leadCounty.py $State",$out2);	
+		exec("python ./python/leadcity.py $State",$out2);	
 		echo json_encode($out2);
 	}
 
