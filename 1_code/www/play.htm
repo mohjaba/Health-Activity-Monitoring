@@ -48,11 +48,11 @@ xmlhttp.onreadystatechange=function()
 xmlhttp.open("GET","getcustomer.asp?q="+str,true);
 xmlhttp.send();
 }</script>
-<script type='text/javascript'>function CountyTableCreation(str)
+<script type='text/javascript'>function CityTableCreation(str)
 {	lead = new Array();
 	$.ajax({
                        type: "GET",
-                       url: "Play_files/countlead.php",
+                       url: "Play_files/citylead.php",
                        data: {State : str},
                        success: function(result){
 			lead = JSON.parse(result);
@@ -98,7 +98,7 @@ xmlhttp.open("GET","getcustomer.asp?q="+str,true);
 xmlhttp.send();
 }</script>
 <script>{window.load=StateTableCreation();}</script>
-<script>{window.load=CountyTableCreation();}</script>
+<script>{window.load=CityTableCreation();}</script>
 </head><body>
 <div class="themeWidth">
   <div class="themeSocialIconAndSearchBoxContainer"> 
@@ -232,7 +232,7 @@ xmlhttp.send();
                 <div id="elm_SKHUkWUlSP6Af638zmfBng" class="zpelement-wrapper form" name="form">
                     <div class="zpAlignPos" id="zpform_Choose_the_state" formid="42884795-Choose_the_state"><div><form style="visibility: visible;" elname="Choose_the_state" name="Choose_the_state" action="/siteforms/addRecordValidate.do" onsubmit="fnFormSubmit(this)" method="post"><input name="formLinkName" value="Choose_the_state" type="hidden"><input name="recType" value="1" type="hidden"><input name="formid" value="2298218000000013001" type="hidden"><input name="formLinkId" value="2" type="hidden"><input name="tableName" value="t_2298218000000013001" type="hidden"><input name="appLinkName" value="zsa-42884795" type="hidden"><input name="sharedBy" value="42884795" type="hidden"><input name="dateFormat" value="dd-MMM-yyyy" type="hidden"><input name="timeZone" value="America/Los_Angeles" type="hidden"><h2 class="frmname">Counties Leadboard</h2><ul><li id="Choose_the_state-State-1"><label>Choose the State</label><div><span>
 
-<select id="2298218000000014009" onchange="CountyTableCreation(this.value)" fieldtype="100" delugetype="STRING" name="State">
+<select id="2298218000000014009" onchange="CityTableCreation(this.value)" fieldtype="100" delugetype="STRING" name="State">
 							<option value="AL">Alabama</option>
 							<option value="AK">Alaska</option>
 							<option value="AZ">Arizona</option>
