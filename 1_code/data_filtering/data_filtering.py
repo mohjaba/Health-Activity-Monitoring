@@ -1,3 +1,6 @@
+# written by: Ioannis Paraskevakos
+# tested by: Ioannis Paraskevakos
+# debugged by: Ioannis Paraskevakos
 from pymongo import MongoClient
 from hashtable import hashtable
 from statehash import StateHash

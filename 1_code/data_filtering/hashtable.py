@@ -1,3 +1,6 @@
+# written by: Ioannis Paraskevakos
+# tested by: Ioannis Paraskevakos
+# debugged by: Ioannis Paraskevakos
 hashtable=[{'name':'New York, NY','lat':40.71,'long':-73.99},
 {'name':'Los Angeles, CA','lat':34,'long':-118.25},
 {'name':'Chicago, IL','lat':41.83,'long':-87.68},
