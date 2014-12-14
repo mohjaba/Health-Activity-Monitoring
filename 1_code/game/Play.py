@@ -50,6 +50,7 @@ class Play:
         for each state that has new tweets and each city. 
         """
         Tweets = self.CollTweets.find() # Find the tweet that have geo coordinates for the moment.
+        index = 0
         for tweet in Tweets:
             place = tweet['place']
             country = tweet['country']
