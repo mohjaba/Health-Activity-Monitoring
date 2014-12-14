@@ -82,11 +82,11 @@ if __name__ == '__main__':
     if Num >= 10:
         for i in range(0,10):
             print NameLead[i]
-                print PointsLead[i]
+            print PointsLead[i]
     else:
         for i in range(0,Num):
             print NameLead[i]
-                print PointsLead[i]
+            print PointsLead[i]
         for i in range(0,10-Num):
             print ''
             print ''
