@@ -1,3 +1,6 @@
+# written by: Ioannis Paraskevakos
+# tested by: Ioannis Paraskevakos
+# debugged by: Ioannis Paraskevakos
 from __future__ import division
 import pymongo
 from datetime import date

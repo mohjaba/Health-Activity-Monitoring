@@ -1,3 +1,7 @@
+# written by: Ioannis Paraskevakos
+# tested by: Ioannis Paraskevakos
+# debugged by: Ioannis Paraskevakos
+
 from __future__ import division
 from pymongo import MongoClient
 from datetime import date
@@ -41,21 +45,28 @@ class Play:
 		self.TweetedCities = dict()
 
 	def grab_tweets(self):
+		"""
+		This method is responsible to query the database and count the number of tweets
+		for each state that has new tweets and each city. 
+		"""
 		Tweets = self.CollTweets.find() # Find the tweet that have geo coordinates for the moment.
 		for tweet in Tweets:
 			place = tweet['place']
 			country = tweet['country']
 			state = place[-2:]
+            index = index + 1
 			#If the states is already found increment the number of tweets
 			#for this state else put 1 since this is the first tweet
-			if (self.TweetedStates.__contains__(state) and country=='US' and state!='US'):
-				self.TweetedStates[state] = self.TweetedStates[state]+1
-			elif (state!='US'):
-				self.TweetedStates[state] = 1
-			if (self.TweetedCities.__contains__(place) and country=='US' and state!='US'):
-				self.TweetedCities[place] = self.TweetedCities[place]+1
-			elif (state!='US'):
-				self.TweetedCities[place] = 1
+            AreaEntry = self.CollState.find_one({'_id':state})
+            if AreaEntry:
+                if (self.TweetedStates.__contains__(state) and country=='US' and state!='US'):
+                    self.TweetedStates[state] = self.TweetedStates[state]+1
+                elif (state!='US'):
+                    self.TweetedStates[state] = 1
+                if (self.TweetedCities.__contains__(place) and country=='US' and state!='US'):
+                    self.TweetedCities[place] = self.TweetedCities[place]+1
+                elif (state!='US'):
+                    self.TweetedCities[place] = 1
 
 
 	def update_areas(self):
