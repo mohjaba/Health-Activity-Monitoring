@@ -14,8 +14,8 @@ class Play:
 	Game class. Contains all the necessary the methods to enable the game.
 	
 	** *Attributes* **
-	   mongoclient   : This is the actual connection with the MongoDB
-	   CollState     : This is the connection with the Collection that
+	mongoclient   : This is the actual connection with the MongoDB
+	CollState     : This is the connection with the Collection that
                        holds the data for the Game over the States.
        CollTwets     : This is the connection with the Collection that 
                        holds the data from the tweets pulled from Twitter
