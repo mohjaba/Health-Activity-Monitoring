@@ -18,7 +18,7 @@ def get_name_lead():
 
     # Create a list with the names of the Ten states with the most points in descendin order
     for i in range(0,10):
-        StateLeadName.append(CollState[50-i]['name'])
+        StateLeadName.append(CollState[49-i]['name'])
 
     mongoclient.close() #Close the connection to the database    
     return StateLeadName
@@ -38,7 +38,7 @@ def get_point_lead():
     
     # Create a list with the points of the Ten states with the most points in descendin order
     for i in range(0,10):
-        StateLeadPoints.append(CollState[50-i]['points'])
+        StateLeadPoints.append(CollState[49-i]['points'])
     
     mongoclient.close() #Close the connection to the database
     return StateLeadPoints
