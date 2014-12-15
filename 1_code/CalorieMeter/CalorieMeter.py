@@ -1,3 +1,7 @@
+// written by: Ghassan Bati (ghassan.bati@rutgers.edu)
+// tested by: Ghassan Bati (ghassan.bati@rutgers.edu)
+// debugged by: Ghassan Bati (ghassan.bati@rutgers.edu)
+
 import twitter
 import json
 def oauth_login():
@@ -76,6 +80,7 @@ for label, data in (('Word', words),
     pt.align[label], pt.align['Count'] = 'l', 'r' # Set column alignment
     print pt
 	####
+# Specifying where the number of calories is and calculate the total 
 str1= "calories";		
 jwdah = 0.0;
 for t in status_texts:
@@ -97,4 +102,4 @@ for t in status_texts:
 		jwdah = jwdah + float(str(t)[bati+2:ghas]);
 		print jwdah
 #
-print jwdah;
+print jwdah; # Total of burnt Calories for the most recent 200 tweets
