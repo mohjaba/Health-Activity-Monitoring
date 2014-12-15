@@ -107,9 +107,10 @@ class Play:
             state = self.CollState.find_one({'_id':motherstate})
             CollCity = self.mongoclient.search_results[motherstate]
             AreaEntry = CollCity.find_one({'name':name})
+            adding_entry = 0
+            # If the city does not exist create a new entry with the necessary starting data
             if not AreaEntry:
                 AreaEntry = dict()
-                AreaEntry['_id']=''
                 AreaEntry['area'] = 'city'
                 AreaEntry['name'] = name
                 AreaEntry['points'] = 0
@@ -117,6 +118,7 @@ class Play:
                 AreaEntry['lastUpdate'] = [date.today().year,date.today().month,date.today().day]
                 AreaEntry['totalTweets'] = 0
                 AreaEntry['motherState'] = motherstate
+                adding_entry = 1
                 
             #Grad the date of the last update, create an object of the Game
             #class and call the method for the new points
@@ -130,7 +132,12 @@ class Play:
             AreaEntry['lastTweetVal'] = GamingArea.__get__('lastTweetVal')
             AreaEntry['lastUpdate'] = GamingArea.__get__('lastUpdate')
             AreaEntry['totalTweets'] = GamingArea.__get__('totalTweets')
-            CollCity.update({'_id':AreaEntry['_id']},AreaEntry,True)
+
+            #If the entry is new insert it to MongoDB, else update it
+            if adding_entry:
+                CollCity.insert(AreaEntry)
+            else:
+                CollCity.update({'_id':AreaEntry['_id']},AreaEntry,True)
 
 	
 if __name__ == '__main__':
