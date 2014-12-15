@@ -1,3 +1,6 @@
+# written by: Ioannis Paraskevakos
+# tested by: Ioannis Paraskevakos
+# debugged by: Ioannis Paraskevakos
 StateHash=[{"_id" : "NJ","name" : "New Jersey"}, 
 {"_id" : "NY","name" : "New York"}, 
 {"_id" : "AL","name" : "Alabama"}, 
