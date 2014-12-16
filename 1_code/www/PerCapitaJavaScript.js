@@ -1,3 +1,6 @@
+//written by: Dean Takacs
+// tested by: Dean Takacs
+// debugged by: Dean Takacs
 
 var map, RunningMapData;
 var MapHeading="Regular Heat Map";
