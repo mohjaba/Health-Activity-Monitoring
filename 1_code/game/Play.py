@@ -62,11 +62,11 @@ class Play:
             if AreaEntry:
                 if (self.TweetedStates.__contains__(state) and country=='US' and state!='US'):
                     self.TweetedStates[state] = self.TweetedStates[state]+1
-                elif (state!='US'):
+                elif (state!='US' and country == 'US'):
                     self.TweetedStates[state] = 1
                 if (self.TweetedCities.__contains__(place) and country=='US' and state!='US'):
                     self.TweetedCities[place] = self.TweetedCities[place]+1
-                elif (state!='US'):
+                elif (state!='US' and country == 'US'):
                     self.TweetedCities[place] = 1
 
 
