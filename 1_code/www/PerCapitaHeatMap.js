@@ -1,12 +1,12 @@
-//var foo = new Date;
-//var currentUnixtime = parseInt(foo.getTime() / 1000);
+//written by: Dean Takacs
+// tested by: Dean Takacs
+// debugged by: Dean Takacs
+
 
 
 JsonGeoData = jsonGeoData;
 
-//var MasterEndTime = 1;
-//var MasterBeginTime = currentUnixtime + 1;
-//var MasterCounter = JsonGeoData.length;
+
 
 var map;
 var heatmap;
