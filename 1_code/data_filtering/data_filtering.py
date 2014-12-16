@@ -25,7 +25,7 @@ def locator(tweets,hashtable):
     #Uncomment this line in case a tweet outside the US passes to find its id
     # and check its location value
     #print tweet['_id']
-    if tweet['geo'] != None and tweet['place'] != None and tweet['place']['country_code'] == 'US':
+    if tweet['geo'] != None and tweet['place'] != None:
       finalGeoLat = tweet['geo']['coordinates'][0]
       finalGeoLog = tweet['geo']['coordinates'][1]
       temp_tweet = {'_id':tweet['_id'],'coordinates':[finalGeoLat,finalGeoLog],
