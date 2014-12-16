@@ -3,8 +3,8 @@ import sys
 
 owm = pyowm.OWM('80c233e546bdab004385a95fd8f98eee')
 
-#def get_newname(name):
-#	return name.replace(":", " ")
+def get_newname(name):
+	return name.replace(":", " ")
 
 
 
