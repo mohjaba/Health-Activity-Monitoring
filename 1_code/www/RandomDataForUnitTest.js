@@ -1,3 +1,7 @@
+//written by: Dean Takacs
+// tested by: Dean Takacs
+// debugged by: Dean Takacs
+
 a=4;
 jsonGeoData = [
 {lat:35.06,log:-84.24,weight:80},
