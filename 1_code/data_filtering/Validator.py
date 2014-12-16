@@ -39,6 +39,8 @@ class Validator:
                    list. If a keyword exists in the tweet's text and the tweet has not been
                    discarded from the final list by a previous keyword success it is discarded
                    from the tweets that will be returned.
+
+    updater : This method just updates the database with the new filtered and located data.
   '''
 
   def __init__(self):

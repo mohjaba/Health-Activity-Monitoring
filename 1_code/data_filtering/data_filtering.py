@@ -7,9 +7,8 @@ from statehash import StateHash
 
 def locator(tweets,hashtable):
   '''
-  This function checks all tweets and returns only those that are geotagged and
-  located in the US or the uses the location of the user to decide the
-  coordinates of a tweet.
+  This function checks all tweets and returns those that are geotagged or 
+  the location of the user is recongized and the coordinates are appended to the tweet.
 
   Arguments:
     tweets : A list of tweets that will be selected by their location

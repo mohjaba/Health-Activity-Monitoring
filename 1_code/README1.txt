@@ -1,4 +1,4 @@
-1) In order to load the web site you need to install the PHP,Apache and MongoDB.
+﻿1) In order to load the web site you need to install the PHP,Apache and MongoDB.
    Here is a tutorialon how to do it in Ubuntu :
    http://tecadmin.net/setup-mongodb-php5-apache2-ubuntu/
    After finishing the steps in the above url, just copy everything from the www
@@ -35,4 +35,11 @@ execute ‘data.py’ ($ python data.py)
 open the map.html (write in the web browser address: localhost:5000/map.html). You have to be connected to the Internet during the execution time.
 A google map will be shown in the page and the data will be appear on the map gradually. 
 
-3) game.py contains the class for playing the game.
+3) In order to run the Game Feature, assuming that all the servers are up and running, instruction 3 from ../4_data_collection/README4.txt, go to the game folder and type:
+    python Play.py
+   After a while the program will end and you will be able to see the points in the web page.
+
+4) If you have downloaded the data from our online database and you want to run the filtering proccess, then:
+   1) In line 156 of the data_filtering.py file client.<db_name>.<coll_name>.find() the db_name and coll_name are the same with your database.
+   2) If you do not want to use the filters, but only the locator comment lines 140-148, lines 159-160 and change in line 162 tweets_final to usable_tweets
+   3) To run type python data_filtering.py
