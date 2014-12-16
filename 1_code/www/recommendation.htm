@@ -1,5 +1,50 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="generator" content="Zoho Sites 1.0, http://zoho.com/sites"><title>Health Monitoring Analytics - Recommendation</title><meta property="og:title" content="Health Monitoring Analytics - Recommendation"><meta property="og:url" content="Recommendation.htm"><meta property="og:description" content=""><link href="Recommendation_files/content_style.css" rel="stylesheet" type="text/css"><link href="Recommendation_files/style.css" rel="stylesheet" type="text/css"><link href="Recommendation_files/contentreset_style.css" type="text/css" rel="stylesheet"> <link rel="stylesheet" href="Recommendation_files/webfonts.css" type="text/css"><script>var ZS_ColumnFix=false;var ZS_FormAppName="health-monitoring-analytics-42884795"</script><!--[if gt IE 8]><script>ZS_ColumnFix=true</script><script src="/js/json2.js"></script><![endif]--><script src="Recommendation_files/commonUtils.js"></script><script src="Recommendation_files/bootstrap.js"></script><script src="Recommendation_files/navigation.js"></script><script>var ZS_adjustHeight=false;var ZS_PublishMode = true; var ZS_MobileVer = false;</script><script src="Recommendation_files/animation.js"></script><script src="Recommendation_files/audio.js"></script><script src="Recommendation_files/in.js"></script><script src="Recommendation_files/jquery.js"></script><script src="Recommendation_files/secureAnonymousFramework"></script><script src="Recommendation_files/form.js"></script><script src="Recommendation_files/generatejs.js"></script><script src="Recommendation_files/searchableInput.js"></script><script src="Recommendation_files/app.js"></script><script src="Recommendation_files/form-renderer.js"></script><script src="Recommendation_files/formSubmitJs.js"></script></head><body>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="generator" content="Zoho Sites 1.0, http://zoho.com/sites"><title>Health Monitoring Analytics - Recommendation</title><meta property="og:title" content="Health Monitoring Analytics - Recommendation"><meta property="og:url" content="Recommendation.htm"><meta property="og:description" content=""><link href="Recommendation_files/content_style.css" rel="stylesheet" type="text/css"><link href="Recommendation_files/style.css" rel="stylesheet" type="text/css"><link href="Recommendation_files/contentreset_style.css" type="text/css" rel="stylesheet"> <link rel="stylesheet" href="Recommendation_files/webfonts.css" type="text/css"><script>var ZS_ColumnFix=false;var ZS_FormAppName="health-monitoring-analytics-42884795"</script><!--[if gt IE 8]><script>ZS_ColumnFix=true</script><script src="/js/json2.js"></script><![endif]--><script src="Recommendation_files/commonUtils.js"></script><script src="Recommendation_files/bootstrap.js"></script><script src="Recommendation_files/navigation.js"></script><script>var ZS_adjustHeight=false;var ZS_PublishMode = true; var ZS_MobileVer = false;</script><script src="Recommendation_files/animation.js"></script><script src="Recommendation_files/audio.js"></script><script src="Recommendation_files/in.js"></script><script src="Recommendation_files/jquery.js"></script><script src="Recommendation_files/secureAnonymousFramework"></script><script src="Recommendation_files/form.js"></script><script src="Recommendation_files/generatejs.js"></script><script src="Recommendation_files/searchableInput.js"></script><script src="Recommendation_files/app.js"></script><script src="Recommendation_files/form-renderer.js"></script><script src="Recommendation_files/formSubmitJs.js"></script>
+
+
+<script type='text/javascript'>function CountyTableCreation(str)
+{
+	
+	lead = new Array();
+	$.ajax({
+                       type: "GET",
+                       url: "Recommendation_files/temp.php",
+                       data: {State : str},
+                       success: function(result){
+			lead = JSON.parse(result);
+			$("#Templace").html(lead[0]);
+			$("#Temtem").html(lead[1]);
+			$("#Temstatus").html(lead[2]);
+   			$("#Temwind").html(lead[3]);
+			$("#Temhumidity").html(lead[4]);
+   			$("#Tempressure").html(lead[5]);
+	               }
+                     });
+
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","getcustomer.asp?q="+str,true);
+xmlhttp.send();
+}</script>
+
+
+
+
+
+</head><body>
 <div class="themeWidth">
   <div class="themeSocialIconAndSearchBoxContainer"> 
      </div>
@@ -50,56 +95,135 @@
                     <div id="pos_o5mNiyKfRqudwW3Cp_TpDA" class="zpwrapper col-space"><div style="height:1px;">&nbsp;</div>
 
         <div id="elm_zvcAHyt4Sz68YQHtekjOdA" class="zpelement-wrapper text">
-                <div><h2><font size="6">Recommendation Activities</font></h2></div>
+                <div>
+                  <h2><font size="6">Recommendation: </font></h2>
+                  <h2><font size="6">World's Most Popular Activities</font></h2>
+                </div>
             </div>
 
             <div id="elm_wiqUSx1wSzWxv84NXfSdcA" class="zpelement-wrapper image" name="image">
                 <div class="zpAlignPos" style="float:left;text-align:center;;margin-bottom:2px;">
-                <img class="zpImage" src="Recommendation_files/wordcloud.png" style="border:0px solid;border-color:initial;width: 462px;margin-right:10px;padding:0px;background:transparent; 
-                    cursor:pointer;" onclick="lightBox(this)
-                ">
-                <div class="zpImageCaption" style="text-align:center; width: 462px;margin:0px auto;"></div></div>
+                  <div style="overflow: auto;">
+                    <table width="121%" style="float: left;width: 100.0%;">
+                      <tbody>
+                        <tr>
+                          <th width="20%">No.</th>
+                          <th width="47%">Activities</th>
+                          <th width="33%">Mentions</th>
+                          </tr>
+                        <tr>
+                          <td style="text-align: center;">1</td>
+                          <td style="text-align: center;" id="firstactivity"></td>
+                          <td style="text-align: center;" id="firstnumber"></td>
+                          </tr>
+                        <tr>
+                          <td style="text-align: center;">2</td>
+                          <td style="text-align: center;" id="secactivity"></td>
+                          <td style="text-align: center;" id="secsnumber"></td>
+                          </tr>
+                        <tr>
+                          <td style="text-align: center;">3</td>
+                          <td style="text-align: center;" id="thirdactivity"></td>
+                          <td style="text-align: center;" id="thirdnumber"></td>
+                          </tr>
+                        <tr>
+                          <td style="text-align: center;">4</td>
+                          <td style="text-align: center;" id="fourthactivity"></td>
+                          <td style="text-align: center;" id="fourthnumber"></td>
+                          </tr>
+                        <tr>
+                          <td style="text-align: center;">5</td>
+                          <td style="text-align: center;" id="fifthactivity"></td>
+                          <td style="text-align: center;" id="fifthnumber"></td>
+                          </tr>
+                        <tr>
+                          <td style="text-align: center;">6</td>
+                          <td style="text-align: center;" id="sixthactivity"></td>
+                          <td style="text-align: center;" id="sixthnumber"></td>
+                          </tr>
+                        <tr>
+                          <td style="text-align: center;">7</td>
+                          <td style="text-align: center;" id="seventhactivity"></td>
+                          <td style="text-align: center;" id="seventhnumber"></td>
+                          </tr>
+                        <tr>
+                          <td style="text-align: center;">8</td>
+                          <td style="text-align: center;" id="eigthactivity"></td>
+                          <td style="text-align: center;" id="eigthnumber"></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="zpImageCaption" style="text-align:center; width: 462px;margin:0px auto;"></div></div>
             </div>
+                    </div></div>
+              <form id="myform"  action=""  method="get" >
+                     
+                <h2 class="frmname">Weather Now</h2>
+                <ul>
+		
+                  <li id="Home-Location-1">
+                    <label>Location<br>
+                    (input the exact place and use : instead of space)</label>
+                    e.g.
+                  &quot;New:York,:US&quot;</li>
+                  <li>			 
+                    <div><span>
+                      <input type="text" onkeyup="CountyTableCreation(this.value)">
+                    </span></div>
+                  </li>
+                  <li><span style="display:none;" id="formMsg_Home"></span></li>
+                  <li>
+                    <label>&nbsp;</label>
+                    <div>
 
-        <div id="elm_1dMCDnbkRqSPgnSwGF0HPg" class="zpelement-wrapper text">
-                <div><h2>Details</h2></div>
-            </div>
+			</form>
+		
 
-        <div id="elm_tNPhcUX4RMSyICFF9Rp6SQ" class="zpelement-wrapper text">
-                <div><p>Swimming</p><p>Nearest Place: &nbsp;Werblin Recreation Center</p><p>Tweet Mentioned: 1003</p></div>
-            </div>
-                    </div></div> 
-                    <div class="zpflLeft zpcolumn" style="width:40%">
-                    <div id="pos_pgnEkR1BTPiqWcIF2I0rkA" class="zpwrapper col-space"><div style="height:1px;">&nbsp;</div>
-
-            <div id="elm__sL5iICTQQmxeDihNpMbFA" class="zpelement-wrapper zpcol-layout">
-            <div class="zpcolumns">
-                    <div class="zpflLeft zpcolumn" style="width:60%">
-                    <div id="pos_mJwqRBcNSbuebxUWscP_4g" class="zpwrapper col-space"><div style="height:1px;">&nbsp;</div>
-
-        <div id="elm_-BHuv4v0R82v1BMe8MtWwA" class="zpelement-wrapper text">
-                <div><h2>Weather Right Now</h2></div>
-            </div>
-
-            <div id="elm_UdWEyA02Sc2V0nUxddfT0w" class="zpelement-wrapper image" name="image">
-                <div class="zpAlignPos" style="float:left;text-align:center;;margin-bottom:2px;">
-                <img class="zpImage" src="Recommendation_files/weather.png" style="border:0px solid;border-color:initial;width: 223px;margin-right:10px;padding:0px;background:transparent; 
-                    cursor:pointer;" onclick="lightBox(this)
-                ">
-                <div class="zpImageCaption" style="text-align:center; width: 223px;margin:0px auto;"></div></div>
-            </div>
-                    </div></div> 
-                    <div class="zpflLeft zpcolumn" style="width:40%">
-                    <div id="pos_-vEQLb01Rg2BLATyfPqv-w" class="zpwrapper col-space"><div style="height:1px;">&nbsp;</div>
-
-                <div id="elm_aE_Hr8VLSeO3CNexze85Uw" class="zpelement-wrapper form" name="form">
-                    <div class="zpAlignPos" id="zpform_Recommendation" formid="42884795-Recommendation"><div><form style="visibility: visible;" elname="Recommendation" name="Recommendation" action="/siteforms/addRecordValidate.do" onsubmit="fnFormSubmit(this)" method="post"><input name="formLinkName" value="Recommendation" type="hidden"><input name="recType" value="1" type="hidden"><input name="formid" value="2298218000000012103" type="hidden"><input name="formLinkId" value="3" type="hidden"><input name="tableName" value="t_2298218000000012103" type="hidden"><input name="appLinkName" value="zsa-42884795" type="hidden"><input name="sharedBy" value="42884795" type="hidden"><input name="dateFormat" value="dd-MMM-yyyy" type="hidden"><input name="timeZone" value="America/Los_Angeles" type="hidden"><h2 class="frmname">Choose for Recommendation</h2><ul><li id="Recommendation-Address-1"><label>Address</label><div><span><input formcompid="2298218000000014576" onchangeexists="" name="Address" fieldtype="1" delugetype="STRING" type="text"></span></div></li><li id="Recommendation-Intensity-1"><label>Intensity</label><div formcompid="2298218000000014696" onchangeexists=""><span><input id="radioEl_Intensity_High_1" name="Intensity" value="High" formcompid="2298218000000014696" onchangeexists="" fieldtype="101" delugetype="STRING" type="radio"><label for="High">High</label></span><span><input id="radioEl_Intensity_Low_1" name="Intensity" value="Low" formcompid="2298218000000014696" onchangeexists="" fieldtype="101" delugetype="STRING" type="radio"><label for="Low">Low</label></span><span><input id="radioEl_Intensity_Either_1" name="Intensity" value="Either" formcompid="2298218000000014696" onchangeexists="" fieldtype="101" delugetype="STRING" type="radio"><label for="Either">Either</label></span></div></li><li id="Recommendation-Category-1"><label>Category</label><div formcompid="2298218000000014722" onchangeexists=""><span><input id="radioEl_Category_Team_1" name="Category" value="Team" formcompid="2298218000000014722" onchangeexists="" fieldtype="101" delugetype="STRING" type="radio"><label for="Team">Team</label></span><span><input id="radioEl_Category_Individual_1" name="Category" value="Individual" formcompid="2298218000000014722" onchangeexists="" fieldtype="101" delugetype="STRING" type="radio"><label for="Individual">Individual</label></span><span><input id="radioEl_Category_Either_1" name="Category" value="Either" formcompid="2298218000000014722" onchangeexists="" fieldtype="101" delugetype="STRING" type="radio"><label for="Either">Either</label></span></div></li><li><span style="display:none;" id="formMsg_Recommendation"></span></li><li><label>&nbsp;</label><div><input value="Submit" type="submit"><input value="Reset" type="reset"></div></li></ul></form></div><script>i18n["selectOption"] ="Select";i18n["invalidmsg"]="Invalid entries found, please correct and resubmit.";i18n["pleasewait"]="Please Wait";ZCForm.inZohoCreator = false;var onLoadExist = false;var appLinkName = "zsa-42884795";var formLinkName = "Recommendation";var formDispName = "Choose for Recommendation";var formAccessType = 1;var formID = 3;ZCForm.zcFormAttributes['genScriptURL'] = "/siteforms/generateJS.do";ZCForm.zcFormAttributes['formParentDiv'] = false;ZCForm.zcFormAttributes['customCalendar'] = true;ZCForm.zcFormAttributes['browseralert'] = false;ZCForm.zcFormAttributes['ajaxreload'] = true;ZCForm.zcFormAttributes['fieldContainer'] = "div";   ZCForm.zcFormAttributes['eleErrTemplate'] = "<div tag='eleErr'> insertMessage </div>"; var paramsMapString = "formID=" + formID + ",appLinkName=" + appLinkName + ",formDispName="+ formDispName + ",formAccessType=1,formLinkName="+formLinkName; ZCForm.addToFormArr(paramsMapString, formLinkName);if(onLoadExist){doActionOnLoad(formID, ZCForm.getForm(formLinkName, formAccessType)); } else { ZCForm.enableForm(formLinkName,formAccessType); } ZCForm.regFormEvents("formLinkName","formAccessType");</script></div>
-                </div>
-                    </div></div> 
+                    </div>
+                  </li>
+                        <li>
+                          <table width="121%" style="float: left;width: 100.0%;">
+                            <tbody>
+                              <tr>
+                                <th width="20%">----</th>
+                                <th width="47%"> Weather Data</th>
+                              </tr>
+                              <tr>
+                                <td style="text-align: center;">Place</td>
+                                <td style="text-align: center;" id="Templace"></td>
+                              </tr>
+                              <tr>
+                                <td style="text-align: center;">Temperature (F)</td>
+                                <td style="text-align: center;" id="Temtem"></td>
+                              </tr>
+                              <tr>
+                                <td style="text-align: center;">Status</td>
+                                <td style="text-align: center;" id="Temstatus"></td>
+                              </tr>
+                              <tr>
+                                <td style="text-align: center;">Wind Speed (m/s)</td>
+                                <td style="text-align: center;" id="Temwind"></td>
+                              </tr>
+                              <tr>
+                                <td style="text-align: center;">Humidity (%)</td>
+                                <td style="text-align: center;" id="Temhumidity"></td>
+                              </tr>
+                              <tr>
+                                <td style="text-align: center;">Pressure (hpa)</td>
+                                <td style="text-align: center;" id="Tempressure"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </li>
+                </ul>
+                
             </div></div>
-                    </div></div> 
-            </div></div>
-</div>
+            <p>Check the weather and choose one of the world's most popular activities!</p>
+		<p>Suggestions:<p> 
+		<p>for indoor activities:  </p>
+		<p>for outdoor activities: </p>
+    </div>
 </div>
     
     
